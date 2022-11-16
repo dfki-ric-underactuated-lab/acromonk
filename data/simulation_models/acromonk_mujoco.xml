@@ -1,0 +1,59 @@
+<mujoco model="20220510_ShwingBotV1">
+<!--    <size nuserdata="100" nuser_actuator="1"/>-->
+    <compiler angle="radian" meshdir="meshes/"/>
+    <size njmax="500" nconmax="100" />
+    <contact>
+        <exclude body1="hook_1" body2="link_2" />
+        <exclude body1="base_stick" body2="hook_1" />
+    </contact>
+    <asset>
+        <texture name="texplane" type="2d" builtin="checker" rgb1=".867 .541 .236" rgb2=".953 .694 .392"
+            width="100" height="100"/>
+        <texture type="skybox" builtin="gradient" width="128" height="128" rgb1="0.0 0.699 0.839"
+            rgb2="0.0 0.699 0.839"/>
+        <material name='MatPlane' reflectance='0.0' texture="texplane" texrepeat="5 5" texuniform="true"/>
+        <material name='black_metal' reflectance='0.2' shininess='0.5' rgba="0.15 0.15 0.15 1"/>
+        <material name='black_rough_metal' reflectance='0.1' shininess='0.3' rgba="0.0 0.0 0.0 1"/>
+        <material name='wood' reflectance='0.1' shininess='0.3' rgba="0.58 0.43 0.2 1"/>
+        <mesh name="stick_2" file="stick_2.STL" />
+        <mesh name="hook_1" file="hook_1.STL" />
+        <mesh name="link_2" file="link_2.STL" />
+        <mesh name="hook_2_lower" file="hook_2_lower.STL" />
+        <mesh name="hook_2_upper_lower" file="hook_2_upper.STL" />
+        <mesh name="hook_2_upper_tip" file="hook_2_upper_tip.STL" />
+        <mesh name="IMU" file="IMU.STL" />
+        <mesh name="stick_1" file="stick_1.STL" />
+    </asset>
+    <worldbody>
+        <light directional='false' diffuse='1.0 1.0 1.0' specular='0.3 0.3 0.3' pos='1.5 -1.0 4.0' dir='0 -.15 -1'/>
+        <geom name='floor' pos='0 0 -0.75' size='10 10 10' type='plane' material="MatPlane" condim='3'/>
+        <geom name='stick_target' pos="0 0.34 0" type="mesh" rgba="1 1 1 1" mesh="stick_2" />
+        <geom name='stick_start' pos="0 -0.34 0" type="mesh" rgba="1 1 1 1" mesh="stick_1" />
+        <body name="base_stick" pos="0 0 0">
+            <geom name='stick_base' type="mesh" rgba="0.79216 0.81961 0.93333 1" mesh="stick_2" />
+            <body name="hook_1" pos="0 0 0" quat="0.707105 -0.707108 0 0">
+            <inertial pos="-0.0074828 0.23347 -0.020697" quat="0.703762 0.710413 -0.00403474 -0.00393152" mass="1.0419" diaginertia="0.00170863 0.00118074 0.000717443" />
+            <joint name="virtual_joint_hook_1" pos="0 0 0" axis="1 0 0" damping="0.044" />
+            <geom name='hook_1' type="mesh" rgba="0.75294 0.75294 0.75294 1" mesh="hook_1" />
+                <body name="link_2" pos="0.0221 0.31401 -0.02">
+                    <inertial pos="0.00109212 0.124776 0.00088714" quat="0.695157 0.718837 -0.00537166 -0.000151466" mass="0.631065" diaginertia="0.00412099 0.00373661 0.000438013" />
+                    <joint name="joint_1" pos="0 0 0" axis="1 0 0" damping="0.06"/>
+                    <geom name='link_2' type="mesh" rgba="0 0.75294 0 1" mesh="link_2" />
+<!--                    <geom pos="-0.0221 0.31401 -0.02" type="mesh" rgba="0.75294 0.75294 0.75294 1" mesh="hook_2" />-->
+                    <geom pos="0.00959 0.15306 0.0015645" quat="0.707105 0 0.707108 0" type="mesh" rgba="0.2 0.2 0.2 1" mesh="IMU" />
+                    <body name="hook_2" pos="-0.0221 0.31401 -0.02">
+                        <geom name='hook_2_lower' type="mesh" rgba="0.75294 0.75294 0.75294 1" mesh="hook_2_lower" />
+                        <geom name='hook_2_upper' type="mesh" rgba="0.75294 0.75294 0.75294 1" mesh="hook_2_upper_lower" />
+                        <body name="hook_2_tip">
+                            <geom name='hook_2_tip' type="mesh" rgba="0.75294 0.75294 0.75294 1" mesh="hook_2_upper_tip" />
+                        </body>
+                    </body>
+                </body>
+            </body>
+        </body>
+    </worldbody>
+
+    <actuator>
+        <motor joint="joint_1" name="elbow_motor" gear="1" forcelimited="true" forcerange="-5 5"/>
+    </actuator>
+</mujoco>
