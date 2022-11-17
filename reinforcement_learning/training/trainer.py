@@ -1,11 +1,8 @@
-from environment.acromonk import AcroMonkEnv
-from stable_baselines3 import SAC, PPO
 from stable_baselines3.common.callbacks import CheckpointCallback, EvalCallback, CallbackList
-from stable_baselines3.common.evaluation import evaluate_policy
 import os
-import numpy as np
-from utils.paths_handling import project_root_dir
-from utils.parameter_loading import load_parameters
+import sys
+sys.path.append('../')
+from environment.acromonk import AcroMonkEnv
 from utils.make_log_folder import make_log_folder
 from utils.make_mujoco_simulator import make_mujoco_simulator
 from utils.make_rl_model import make_rl_model

@@ -228,15 +228,6 @@ class AcroMonkEnv(gym.Env):
         contact_participant_1 = set(contacts_list_1)
         contact_participant_2 = set(contacts_list_2)
 
-        # print(contact_participant_1_list)
-        # print(contact_participant_2_list)
-        # print(self.current_config)
-        # print(self.sim.get_state())
-        # print(self.current_end_effector_pos)
-        # print(self.sim.data.get_body_xpos('hook_2'))
-
-        stick_contact = False
-
         set_contact_meshes = contact_participant_1.union(contact_participant_2)
         full_stick_set = {'stick_start', 'stick_base', 'stick_target'}
         target_stick_set = {'stick_target'}
@@ -273,43 +264,6 @@ class AcroMonkEnv(gym.Env):
                             self.stick_contact = False
                             self.reached_target = True
         return rew
-
-    # def _reward_target_stick_contact(self, observation, action):
-    #     contacts = self.sim.data.contact
-    #     contacts_list_1 = [self.sim.model.geom_id2name(c.geom1) for c in contacts]
-    #     contacts_list_2 = [self.sim.model.geom_id2name(c.geom2) for c in contacts]
-    #     contact_participant_1 = set(contacts_list_1)
-    #     contact_participant_2 = set(contacts_list_2)
-    #
-    #     set_contact_meshes = contact_participant_1.union(contact_participant_2)
-    #     target_stick_set = {'stick_target'}
-    #     rew = 0.0
-    #     if len(target_stick_set.intersection(set_contact_meshes)) > 0:
-    #         if 'stick_target' in contacts_list_1:
-    #             contact_idcs_target_stick_1 = [contacts_list_1.index('stick_target')]
-    #         else:
-    #             contact_idcs_target_stick_1 = []
-    #         if 'stick_target' in contacts_list_2:
-    #             contact_idcs_target_stick_2 = [contacts_list_2.index('stick_target')]
-    #         else:
-    #             contact_idcs_target_stick_2 = []
-    #
-    #         contact_idcs_target = contact_idcs_target_stick_1 + contact_idcs_target_stick_2
-    #
-    #         for idx in contact_idcs_target:
-    #             contact_target = contacts[idx]
-    #
-    #             other_contact_geom = self.sim.model.geom_id2name(contact_target.geom1)
-    #             if other_contact_geom == 'stick_target':
-    #                 other_contact_geom = self.sim.model.geom_id2name(contact_target.geom2)
-    #
-    #                 if other_contact_geom == 'hook_2_upper' or other_contact_geom == 'hook_2_upper_tip':
-    #                     if self.current_end_effector_pos[2] > 0:
-    #                         rew = 1.0
-    #                         print('Grabbed target stick!!')
-    #                         self.stick_contact = False
-    #                         self.reached_target = True
-    #     return rew
 
     def _reward_target_end_effector_distance(self, observation, action):
         rew = 0
@@ -374,7 +328,6 @@ class AcroMonkEnv(gym.Env):
         return rew
 
     # util functions
-
     def _get_torque(self, action, externally_defined_config=None):
         if externally_defined_config is not None:
             config = externally_defined_config
@@ -397,20 +350,6 @@ class AcroMonkEnv(gym.Env):
             current_config = otherwise_defined_config
         current_config += np.random.randn(len(current_config)) * self.obs_noise_range
         return current_config
-
-    # def _check_for_contact(self):
-    #     contacts = self.sim.data.contact
-    #     contact_participant_1 = set([self.sim.model.geom_id2name(c.geom1) for c in contacts])
-    #     contact_participant_2 = set([self.sim.model.geom_id2name(c.geom2) for c in contacts])
-    #
-    #     stick_contact = False
-    #
-    #     set_contact_meshes = contact_participant_1.union(contact_participant_2)
-    #     stick_set = {'stick_target', 'stick_start', 'stick_base'}
-    #     if len(stick_set.intersection(set_contact_meshes)) > 0:
-    #         stick_contact = True
-    #
-    #     return stick_contact
 
     def _two_d_polynomial_reward_source(self, x_origin, x_now, mode='source', d_max=0.2, power=2,
                                         linear_separatrix=None, separatrix_condition='lower'):

@@ -51,3 +51,6 @@ adding
     export LD_PRELOAD=$LD_PRELOAD:/usr/lib/x86_64-linux-gnu/libGLEW.so
 
 to .bashrc can help.
+
+To simulate the trained rl controller, move to the reinforcement_learning/scripts 
+folder and run replay_rl_model.py.
