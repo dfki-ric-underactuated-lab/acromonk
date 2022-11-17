@@ -1,7 +1,7 @@
 # AcroMonk: A Minimalist Underactuated Brachiating Robot
-<p align="center">
-<img img width="500" src="hardware/poster_new.png" />
-</p>
+<div align="center">
+<img width="500" src="hardware/poster_new.png" />
+</div>
 
 
 ## Description
