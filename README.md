@@ -41,5 +41,5 @@ To simulate the trained rl controller, move to the reinforcement_learning/script
 folder and run replay_rl_model.py. The result should be something like this:
 
 <div align="center">
-<img width="500" src="images/bf_rl.gif" />
+<img width="600" src="images/bf_rl.gif" />
 </div>
