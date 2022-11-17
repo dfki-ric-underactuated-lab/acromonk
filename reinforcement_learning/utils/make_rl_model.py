@@ -19,7 +19,7 @@ def make_rl_model(env, rl_parameters):
 
 
 def load_rl_model(model_data_folder, checkpoint_to_load):
-    with open(os.path.join(model_data_folder, 'parameters', 'parameters.json')) as param_file:
+    with open(os.path.join(model_data_folder, 'parameters.json')) as param_file:
         parameters = json.load(param_file)
 
     algorithm = parameters['rl_model']['algorithm']
