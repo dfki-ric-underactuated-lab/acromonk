@@ -4,7 +4,7 @@ import os
 
 def make_mujoco_simulator(sim_parameters):
     # make the mujoco simulator
-    model = load_model_from_path(os.path.join(project_root_dir, 'data', 'robot_model', '20220510_ShwingBotV1.xml'))
+    model = load_model_from_path(os.path.join(project_root_dir, 'data', 'simulation_models', 'acromonk_mujoco.xml'))
     model.opt.timestep = sim_parameters['dt']
     sim = MjSim(model)
 
