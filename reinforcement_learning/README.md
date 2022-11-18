@@ -56,7 +56,9 @@ The current (dense) reward setup looks like this:
 <img width="600" src="../images/reward_visualization_modified_smaller_YZ.png" />
 </div>
 
+---
 **Challenges:**
 - Can you train a controller that achieves BF brachiation in one swing?
 - Can you train a BF controller only using sparse rewards?
 - Can you train controllers for the other atomic behaviors FB/ZB/ZF ?
+---
