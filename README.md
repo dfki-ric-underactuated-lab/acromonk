@@ -6,10 +6,10 @@
 
 
 <div align="center">
-<img width="500" src="images/zb.mp4" >
-<img width="500" src="images/zf.mp4" >
-<img width="500" src="images/fb.mp4" >
-<img width="500" src="images/bf.mp4" >
+<img width="225" src="images/zb.gif" >
+<img width="225" src="images/zf.gif" >
+<img width="225" src="images/fb.gif" >
+<img width="225" src="images/bf.gif" >
 </div>
 
 ## Description
