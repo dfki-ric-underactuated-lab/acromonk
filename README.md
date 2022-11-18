@@ -32,6 +32,7 @@ the physical system and provides the software (URDF models, simulation and
 controllers) to control it.
 
 ## Reinforcement Learning
+### Installation
 This installation instruction assumes Ubuntu 20.04. 
 We recommend using a dedicated python virtual environment, e.g. using 
 
@@ -67,6 +68,7 @@ folder and run replay_rl_model.py. The result should be something like this:
 <img width="600" src="images/bf_rl.gif" />
 </div>
 
+### Training
 Training a new controller is done via
 
     python scripts/train_rl_model.py
@@ -81,13 +83,13 @@ define a new reward, you have to set the weight in the parameters
 file and implement the respective method in the acromonk 
 environment. 
 
-The current dense reward setup looks like this:
+The current (dense) reward setup looks like this:
 
 <div align="center">
 <img width="600" src="images/reward_visualization_modified_smaller_YZ.png" />
 </div>
 
-Challenges:
+**Challenges:**
 - Can you train a controller that achieves BF brachiation in one swing?
 - Can you train a BF controller only using sparse rewards?
 - Can you train controllers for the other atomic behaviors BF/ZB/ZF ?
