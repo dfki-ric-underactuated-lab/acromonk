@@ -7,6 +7,14 @@
 <img width="500" src="images/2d-arm-acrm-coordinate_v2.png" />
 </div>
 
+
+<div align="center">
+<img width="500" src="images/zb.mp4" >
+<img width="500" src="images/zf.mp4" >
+<img width="500" src="images/fb.mp4" >
+<img width="500" src="images/bf.mp4" >
+</div>
+
 ## Description
 This project offers an open-source and low-cost kit to test control algorithms 
 for underactuated robots. 
