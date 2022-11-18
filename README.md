@@ -9,10 +9,10 @@
 
 
 <div align="center">
-<img width="225" src="images/zb.gif" >
-<img width="225" src="images/zf.gif" >
-<img width="225" src="images/fb.gif" >
-<img width="225" src="images/bf.gif" >
+<img width="250" src="images/zb.gif" >
+<img width="250" src="images/bf.gif" >
+<img width="250" src="images/zf.gif" >
+<img width="250" src="images/fb.gif" >
 </div>
 
 ## Description
