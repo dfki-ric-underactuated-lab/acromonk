@@ -5,9 +5,7 @@ from mujoco_py import load_model_from_xml, load_model_from_path, MjSim, MjSimSta
 import os
 import sys
 import numpy as np
-# import pandas
 import matplotlib.pyplot as plt
-# import glfw
 # local imports
 sys.path.append('../')
 from utils.paths_handling import project_root_dir
