@@ -37,7 +37,7 @@ controllers) to control it.
 ## Documentation
 
 The [hardware setup](hardware/testbench-description.md), [motor configuration](hardware/motor-configuration.md) and [sensor reading](hardware/imu-sensor-reading.md) are described in their respective readme files.
-The dynamics of the AcroMonk are explained [here](docs/acrm-equations.md).
+The dynamics of the AcroMonk is explained [here](docs/acrm-equations.md).
 
 * [Hardware & Testbench Description](hardware/testbench-description.md)
 * [Motor Configuration](hardware/motor-configuration.md)
