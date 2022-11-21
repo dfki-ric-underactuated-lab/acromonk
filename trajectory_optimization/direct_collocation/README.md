@@ -18,7 +18,7 @@ the following figure depicts the general possibilities for the robot's motion.
 </div>
 
 
-## ACroMonk's Configuration for Atomic Behavior
+## AcroMonk's Configuration for Atomic Behaviors
 The unique gripper design offers a large region of attraction, shown in orange color, for grasping a target bar and a well defined pivot point for the swing maneuvers. 
 <div align="center">
 <img width="500" src="../../images/2d-arm-acrm-coordinate_v2.png" />
