@@ -11,11 +11,7 @@ Overall, the structure consists of six unique 3D-printed parts highlighted with 
 
 **Assembly video needs to be added as gif**
 
-## Gripper design
-The innovative gripper design of the AcroMonk makes him the first brachiator that can brachiate continuously with the passive gripper, depicted in the following figure. This unique design offers a large region of attraction, shown in orange color, for grasping a target bar and a well defined pivot point for the swing maneuvers. 
-<div align="center">
-<img width="500" src="../images/2d-arm-acrm-coordinate_v2.png" />
-</div>
+The innovative gripper design of the AcroMonk makes him the first brachiator that can brachiate continuously with the passive gripper.
 
 # Electronics
 The schematic of the electrical diagram with the components are shown in the following figure.
