@@ -42,7 +42,7 @@ The dynamics of the AcroMonk is explained [here](docs/acrm-equations.md).
 * [Hardware & Testbench Description](hardware/testbench-description.md)
 * [Motor Configuration](hardware/motor-configuration.md)
 * [IMU Sensor Reading](hardware/imu-sensor-reading.md)
-* [Bill Of Materials (BOM)](docs/bills-of-materials.md)
+* [Bill Of Materials (BOM)](hardware/bills-of-materials.md)
 
 ## Authors #
 
