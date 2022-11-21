@@ -29,19 +29,17 @@ This project offers different control methods for trajectory stabilization
 which can be studied using the kit. Additionally, it provides a list of 
 components, discusses best practices for implementation, and presents results 
 from experiments with the simulator and the real system. This repository 
-describes the hardware (CAD, Bill Of Materials (BOM) etc.) required to build 
+describes the hardware (CAD, Bill Of Materials ([BOM](hardware/bills-of-materials.md)) etc.) required to build 
 the physical system and provides the software (URDF models, simulation and 
 controllers) to control it.
 
 
 ## Documentation
 
-The [hardware setup](hardware/testbench-description.md), [motor configuration](hardware/motor-configuration.md) and [sensor reading](hardware/imu-sensor-reading.md) are described in their respective readme files.
-The dynamics of the AcroMonk is explained [here](docs/acrm-equations.md).
+The [hardware setup](hardware/testbench-description.md) and [sensor reading](hardware/sensor-reading.md) are described in their respective readme files. The dynamics of the AcroMonk are explained [here](docs/acrm-equations.md).
 
 * [Hardware & Testbench Description](hardware/testbench-description.md)
-* [Motor Configuration](hardware/motor-configuration.md)
-* [IMU Sensor Reading](hardware/imu-sensor-reading.md)
+* [Sensor reading](hardware/sensor-reading.md)
 * [Bill Of Materials (BOM)](hardware/bills-of-materials.md)
 
 ## Authors #
@@ -50,7 +48,7 @@ The dynamics of the AcroMonk is explained [here](docs/acrm-equations.md).
 * [Mahdi Javadi](https://robotik.dfki-bremen.de/en/about-us/staff/maja04/) (Hardware and Software Maintainer)
 * [Daniel Harnack](https://robotik.dfki-bremen.de/en/about-us/staff/daha03.html)
 * [Shubham Vyas](https://robotik.dfki-bremen.de/en/about-us/staff/shvy01/)
-* [Daniel Pizzutilo](https://robotik.dfki-bremen.de/de/ueber-uns/mitarbeiter/dapi01.html)(Mechanical Design)
+* [Daniel Pizzutilo](https://robotik.dfki-bremen.de/de/ueber-uns/mitarbeiter/dapi01.html) (Mechanical Design)
 * Paula Stocco
 
 Feel free to contact us if you have questions about the test bench. Enjoy!
