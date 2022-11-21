@@ -1,7 +1,7 @@
 # Mechanics
 The main idea for the design of the AcroMonk is to have a portable and robust agile robot with a minimum effort for the modification. 
 A modular design is proposed that uses 3D printing technology for ease of reproducibility. 
-Overall, the structure consists of six unique 3D-printed parts highlighted with different colors that are connected by screw-nut fasteners for easy assembly, with compartments for electronics, a battery, counterweights, and cable guides. 
+Overall, the structure consists of six unique 3D-printed parts highlighted with different colors that are connected by screw-nut fasteners for easy assembly, with compartments for electronics, a battery, counterweights, and cable guides. The innovative gripper design of the AcroMonk makes him the first brachiator that can brachiate continuously with the passive gripper.
 
 <div align="center">
 <img width="400" src="../images/exploded-view.png" />
@@ -9,9 +9,11 @@ Overall, the structure consists of six unique 3D-printed parts highlighted with 
 </div>
 
 
-**Assembly video needs to be added as gif**
+<div align="center">
+<img width="300" src="../images/exploded-view.gif" />
+</div>
 
-The innovative gripper design of the AcroMonk makes him the first brachiator that can brachiate continuously with the passive gripper.
+
 
 # Electronics
 The schematic of the electrical diagram with the components are shown in the following figure.
