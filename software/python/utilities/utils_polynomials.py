@@ -1,5 +1,7 @@
 import numpy as np
 from scipy.optimize import curve_fit as cf
+
+
 class FitPiecewisePolynomial:
     """
     Gets data and number of break points and
