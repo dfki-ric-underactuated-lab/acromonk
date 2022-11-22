@@ -1,7 +1,7 @@
 from cProfile import label
 import sys
 
-sys.path.append("../trajectory_optimization/direct_collocation/")
+sys.path.append("direct_collocation/")
 from trajopt_utils import (
     create_acromonk_plant,
     trajopt,
