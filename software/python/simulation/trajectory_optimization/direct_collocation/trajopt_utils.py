@@ -1,6 +1,6 @@
 import sys
 
-sys.path.append("../utilities/")
+sys.path.append("../../utilities/")
 from utils import (
     drake_visualizer,
     generate_path,
@@ -203,7 +203,7 @@ def create_acromonk_plant():
     parser = Parser(plant)
     urdf_folder = "data/urdf-files/urdf"
     file_name = "acromonk.urdf"
-    up_directory = 3
+    up_directory = 4
     urdf_path = generate_path(urdf_folder, file_name, up_directory)
     parser.AddModelFromFile(urdf_path)
     plant.Finalize()
@@ -250,7 +250,7 @@ def save_trajectory(
     # Extract desired input
     elbow_torque_des, _ = extract_data_from_polynomial(u_trajectory, frequency)
     trajectory_folder = "data/trajectories/direct_collocation"
-    up_directory = 3
+    up_directory = 4
     file_name = f"{maneuver}.csv"
     trajectory_path = generate_path(trajectory_folder, file_name, up_directory)
     data = {
