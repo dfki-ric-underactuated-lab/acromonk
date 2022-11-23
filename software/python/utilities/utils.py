@@ -1,6 +1,7 @@
 import os
 import pandas as pd
 import numpy as np
+from utils_polynomials import fit_polynomial
 
 
 def parent(path):
@@ -81,7 +82,7 @@ def create_acromonk_plant():
     parser = Parser(plant)
     urdf_folder = "data/urdf-files/urdf"
     file_name = "acromonk.urdf"
-    up_directory = 3
+    up_directory = 4
     urdf_path = generate_path(urdf_folder, file_name, up_directory)
     parser.AddModelFromFile(urdf_path)
     plant.Finalize()
@@ -111,3 +112,13 @@ def drake_visualizer(plant, scene_graph, builder, duration):
     simulator.AdvanceTo(duration)
     meshcat.stop_recording()
     meshcat.publish_recording()
+
+
+def load_desired_trajectory(maneuver):
+    trajectory_folder = 'data/trajectories/direct_collocation'
+    file_name = f'{maneuver}.csv'
+    up_directory = 4
+    path_to_csv = generate_path(trajectory_folder, file_name, up_directory)
+    data_csv = pd.read_csv(path_to_csv)
+    x0, u0, x0_d, x0_dd = fit_polynomial(data=data_csv)    
+    return x0, u0, x0_d, x0_dd
