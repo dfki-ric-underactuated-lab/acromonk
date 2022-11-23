@@ -141,7 +141,18 @@ def trajopt(
 
 def traj_opt_hyper(maneuver):
     hyper_dict = {
-        # n , tau_limit, initial_state                              , theta_limit                             , speed_limit, ladder_distance, final_state                                  , R  , Nt, init_guess
+        '''
+        n               : Number of knot points
+        tau_limit       : Input torque limit
+        initial_state   : Initial state: [theta1, theta2, theta1_dot, theta2_dot]
+        theta_limit     : Position limits for [theta1, theta2]
+        speed_limit     : Velocity limits for [theta1_dot, theta2_dot]
+        ladder_distance : Distance between two ladder bars in meter
+        final_state     : Final state: [theta1, theta2, theta1_dot, theta2_dot]
+        R               : Input regulization term
+        W               : Time panalization of the total trajectory
+        init_guess      : Initial trajectory as initial guess for solver 
+        '''
         "ZB": [
             20,
             3.0,
