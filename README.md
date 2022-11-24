@@ -36,7 +36,7 @@ controllers) to control it.
 
 ## Documentation
 
-The [hardware setup](hardware/testbench-description.md) and [sensor reading](hardware/sensor-reading.md) are described in their respective readme files. The dynamics of the AcroMonk are explained [here](docs/acrm-equations.md).
+The [hardware setup](hardware/testbench-description.md) and [sensor reading](hardware/sensor-reading.md) are described in their respective readme files. The dynamics of the AcroMonk are explained [here](hardware/acrm-equations.md).
 
 * [Hardware & Testbench Description](hardware/testbench-description.md)
 * [Sensor reading](hardware/sensor-reading.md)
