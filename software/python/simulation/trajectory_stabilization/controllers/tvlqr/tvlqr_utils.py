@@ -7,7 +7,10 @@ from utils import (
     save_dict,
     np
     )
-
+from pydrake.all import (
+    Saturation,
+    LogVectorOutput
+)
 from pydrake.all import VectorSystem, PiecewisePolynomial
 class TvlqrControllerSystem(VectorSystem):
     def __init__(self, plant, tvlqr):
@@ -21,7 +24,7 @@ class TvlqrControllerSystem(VectorSystem):
                      self.tvlqr_obj.k0.value(trajTime))[0][0]    
 
 
-def load_tvlqr_controller(plant, context, x0, u0, Q, R, Qf):
+def load_tvlqr_controller(plant, context, builder, x0, u0, Q, R, Qf, tau_limit):
     from pydrake.all import (
         FiniteHorizonLinearQuadraticRegulatorOptions, 
         FiniteHorizonLinearQuadraticRegulator, 
@@ -47,8 +50,23 @@ def load_tvlqr_controller(plant, context, x0, u0, Q, R, Qf):
         "Qf": Qf,
         "R": R,
         "Trajectory duration(seconds)":x0.end_time()
-    }        
-    return tvlqr, hyper_params_dict
+    }
+    # Connect the diagram for simulation 
+    saturation = builder.AddSystem(Saturation(min_value=[-1 * tau_limit], max_value=[tau_limit]))
+    builder.Connect(saturation.get_output_port(0), plant.get_actuation_input_port())
+    controller = builder.AddSystem(TvlqrControllerSystem(plant, tvlqr))
+    builder.Connect(plant.get_state_output_port(), controller.get_input_port(0))
+    builder.Connect(controller.get_output_port(0), saturation.get_input_port(0))
+    # Save data loggers for sates and input torque
+    input_logger = LogVectorOutput(saturation.get_output_port(0), builder)
+    state_logger = LogVectorOutput(plant.get_state_output_port(), builder)
+    return (
+     tvlqr, 
+     hyper_params_dict,
+     builder,
+     state_logger,
+     input_logger
+    )
 
 def save_trajectory(
     maneuver, 
