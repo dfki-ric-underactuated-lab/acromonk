@@ -23,14 +23,14 @@ the following figure depicts the general possibilities for the robot's motion.
 <img width="200" src="../../../../../hardware/images/fb.gif" >
 <img width="200" src="../../../../../hardware/images/bf.gif" >
 </div>
+
 ## AcroMonk's Configuration for Atomic Behaviors
-The unique gripper design offers a large region of attraction, shown in orange color, for grasping a target bar and a well defined pivot point for the swing maneuvers. 
+The unique gripper design offers a large region of attraction, shown in orange color, for grasping a target bar and a well defined pivot point for the swing maneuvers. The passive gripper impose a constraint on grasping configuration, which plays a vital role in robot's final configuration. 
 <div align="center">
 <img width="500" src="../../../../../hardware/images/2d-arm-acrm-coordinate_v2.png" />
 </div>
 
 
-The passive gripper impose a constraint on grasping configuration, which plays a vital role in robot's final configuration. 
 ## Formulation
 
 The continuous time trajectory optimization problem of the AcroMonk is shown in the following:
