@@ -46,10 +46,10 @@ The [hardware setup](hardware/testbench-description.md) and [sensor reading](har
 
 * [Shivesh Kumar](https://robotik.dfki-bremen.de/en/about-us/staff/shku02.html) (Project Supervisor)
 * [Mahdi Javadi](https://robotik.dfki-bremen.de/en/about-us/staff/maja04/) (Hardware and Software Maintainer)
-* [Daniel Harnack](https://robotik.dfki-bremen.de/en/about-us/staff/daha03.html)
-* [Shubham Vyas](https://robotik.dfki-bremen.de/en/about-us/staff/shvy01/)
+* [Daniel Harnack](https://robotik.dfki-bremen.de/en/about-us/staff/daha03.html) (Reinforcement Learning)
+* [Shubham Vyas](https://robotik.dfki-bremen.de/en/about-us/staff/shvy01/) (Trajectory Optimization, Hardware Concept)
 * [Daniel Pizzutilo](https://robotik.dfki-bremen.de/de/ueber-uns/mitarbeiter/dapi01.html) (Mechanical Design)
-* Paula Stocco
+* Paula Stocco (Trajectory Optimization and Stabilization)
 
 Feel free to contact us if you have questions about the test bench. Enjoy!
 
