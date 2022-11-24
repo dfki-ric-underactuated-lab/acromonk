@@ -1,5 +1,4 @@
 import sys
-
 sys.path.append("../../utilities/")
 from utils import (
     drake_visualizer,
@@ -10,7 +9,6 @@ from utils import (
 from utils_plot import make_results_directory, plot_closed_loop_control_data
 from stabilizer_utils import load_controller, save_trajectory
 
-# from utils_plot import make_results_directory, plot_custom_data_with_dir
 plant, context, scene_graph, builder = create_acromonk_plant()
 maneuver = input(
     "Enter the name of atomic behavior (ZB, ZF, BF, FB): "
@@ -75,4 +73,4 @@ traj_data = save_trajectory(
 )
 # Plot the simulation results
 directory = make_results_directory(maneuver, controller_type)
-plot_closed_loop_control_data(directory, traj_data, show=False)
+plot_closed_loop_control_data(directory, traj_data, show=True)
