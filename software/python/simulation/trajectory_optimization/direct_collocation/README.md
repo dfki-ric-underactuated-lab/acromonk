@@ -61,7 +61,7 @@ The continuous time trajectory optimization problem of the AcroMonk is shown in 
 
 - $`l(u) = u^TR u`$: Running cost with $`R`$ as input weight
 
-- $`\mathbf{f}(\mathbf{x}, u)`$: [Nonlinear dynamics of the AcroMonk](../../docs/acrm-equations.md) considered as equality constraint
+- $`\mathbf{f}(\mathbf{x}, u)`$: [Nonlinear dynamics of the AcroMonk](../../../../../hardware/acrm-equations.md) considered as equality constraint
 
 ## Dependencies
 
