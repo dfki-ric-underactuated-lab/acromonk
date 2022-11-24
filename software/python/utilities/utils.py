@@ -90,7 +90,7 @@ def create_acromonk_plant():
     return plant, context, scene_graph, builder
 
 
-def drake_visualizer(scene_graph, builder, initial_state, duration):
+def drake_visualizer(scene_graph, builder, initial_state, duration, visualize='trajopt'):
     from pydrake.all import Simulator, ConnectMeshcatVisualizer
     from meshcat.servers.zmqserver import start_zmq_server_as_subprocess
 
@@ -107,7 +107,10 @@ def drake_visualizer(scene_graph, builder, initial_state, duration):
     simulator = Simulator(diagram)
     simulator.set_target_realtime_rate(1)
     context_simulator = simulator.get_mutable_context()
-    context_simulator.SetContinuousState(initial_state)
+    if visualize == 'pid':
+        initial_state = np.append(initial_state,[[0]],axis=0)
+    if visualize != 'trajopt':
+        context_simulator.SetContinuousState(initial_state)
     simulator.Initialize()
     meshcat.start_recording()
     simulator.AdvanceTo(duration)

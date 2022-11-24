@@ -45,7 +45,7 @@ def plot_data(
     return plt
 
 
-def plot_custom_data_with_dir(directory, data, show=True):
+def plot_closed_loop_control_data(directory, data, show=True):
     plot_data(
         x_data=[
             data["time"],
