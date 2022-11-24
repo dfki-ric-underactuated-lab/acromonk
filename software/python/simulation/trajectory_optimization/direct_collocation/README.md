@@ -14,15 +14,21 @@ Considering three fixed points for the robot as the following:
 the following figure depicts the general possibilities for the robot's motion.
 
 <div align="center">
-<img width="800" src="../../../../images/atomic-behaviors.png" />
+<img width="800" src="../../../../../hardware/images/atomic-behaviors.png" />
 </div>
 
-
+<div align="center">
+<img width="200" src="../../../../../hardware/images/zb.gif" >
+<img width="200" src="../../../../../hardware/images/zf.gif" >
+<img width="200" src="../../../../../hardware/images/fb.gif" >
+<img width="200" src="../../../../../hardware/images/bf.gif" >
+</div>
 ## AcroMonk's Configuration for Atomic Behaviors
 The unique gripper design offers a large region of attraction, shown in orange color, for grasping a target bar and a well defined pivot point for the swing maneuvers. 
 <div align="center">
-<img width="500" src="../../../../images/2d-arm-acrm-coordinate_v2.png" />
+<img width="500" src="../../../../../hardware/images/2d-arm-acrm-coordinate_v2.png" />
 </div>
+
 
 The passive gripper impose a constraint on grasping configuration, which plays a vital role in robot's final configuration. 
 ## Formulation
@@ -56,7 +62,6 @@ The continuous time trajectory optimization problem of the AcroMonk is shown in 
 - $`l(u) = u^TR u`$: Running cost with $`R`$ as input weight
 
 - $`\mathbf{f}(\mathbf{x}, u)`$: [Nonlinear dynamics of the AcroMonk](../../docs/acrm-equations.md) considered as equality constraint
-
 
 ## Dependencies
 
