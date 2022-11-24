@@ -90,11 +90,11 @@ def create_acromonk_plant():
     return plant, context, scene_graph, builder
 
 
-def drake_visualizer(plant, scene_graph, builder, duration):
+def drake_visualizer(scene_graph, builder, initial_state, duration):
     from pydrake.all import Simulator, ConnectMeshcatVisualizer
     from meshcat.servers.zmqserver import start_zmq_server_as_subprocess
 
-    proc, zmq_url, web_url = start_zmq_server_as_subprocess(server_args=[])
+    _, zmq_url, _ = start_zmq_server_as_subprocess(server_args=[])
     meshcat = ConnectMeshcatVisualizer(
         builder,
         scene_graph,
@@ -106,12 +106,14 @@ def drake_visualizer(plant, scene_graph, builder, duration):
     diagram = builder.Build()
     simulator = Simulator(diagram)
     simulator.set_target_realtime_rate(1)
-    context = simulator.get_mutable_context()
+    context_simulator = simulator.get_mutable_context()
+    context_simulator.SetContinuousState(initial_state)
     simulator.Initialize()
     meshcat.start_recording()
     simulator.AdvanceTo(duration)
     meshcat.stop_recording()
     meshcat.publish_recording()
+    return simulator
 
 
 def load_desired_trajectory(maneuver):
@@ -122,3 +124,4 @@ def load_desired_trajectory(maneuver):
     data_csv = pd.read_csv(path_to_csv)
     x0, u0, x0_d, x0_dd = fit_polynomial(data=data_csv)    
     return x0, u0, x0_d, x0_dd
+                     
