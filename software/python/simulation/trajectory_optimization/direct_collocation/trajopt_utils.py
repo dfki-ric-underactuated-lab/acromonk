@@ -240,8 +240,9 @@ def visualize_traj_opt(plant, scene_graph, x_trajectory):
         pos_to_pose.get_output_port(),
         scene_graph.get_source_pose_port(plant.get_source_id()),
     )
+    intial_state = x_trajectory.value(x_trajectory.start_time())
     drake_visualizer(
-        plant, scene_graph, builder, duration=x_trajectory.end_time()
+        scene_graph, builder, initial_state=intial_state ,duration=x_trajectory.end_time()
     )
 
 
@@ -286,23 +287,23 @@ def save_trajectory(
 def plot_traj(traj_data):
     import matplotlib.pyplot as plt
 
-    plt.figure()
+    plt.figure(figsize=(15, 10))
     plt.plot(traj_data["time"], traj_data["shoulder_pos"], label="shoulder")
-    plt.plot(traj_data["time"], traj_data["elbow_pos"], label="elbow")
+    plt.plot(traj_data["time"], traj_data["elbow_pos"], label="elbow", c='red')
     plt.title("Position")
     plt.xlabel("Time(seconds)")
     plt.ylabel("Position(rad)")
     plt.legend()
 
-    plt.figure()
+    plt.figure(figsize=(15, 10))
     plt.plot(traj_data["time"], traj_data["shoulder_vel"], label="shoulder")
-    plt.plot(traj_data["time"], traj_data["elbow_vel"], label="elbow")
+    plt.plot(traj_data["time"], traj_data["elbow_vel"], label="elbow", c='red')
     plt.title("Velocity")
     plt.xlabel("Time(seconds)")
     plt.ylabel("Velocity(rad/s)")
     plt.legend()
 
-    plt.figure()
+    plt.figure(figsize=(15, 10))
     plt.plot(traj_data["time"], traj_data["elbow_torque"], label="elbow")
     plt.title("Torque Plot")
     plt.xlabel("Time(seconds)")
@@ -312,7 +313,7 @@ def plot_traj(traj_data):
     ee_y, ee_z = forward_kinematics(
         traj_data["shoulder_pos"], traj_data["elbow_pos"]
     )
-    plt.figure()
+    plt.figure(figsize=(15, 10))
     plt.plot(ee_y, ee_z, label="ee trajectory")
     plt.title("End-Effector Trajectory")
     plt.xlabel("Y-component(m)")
