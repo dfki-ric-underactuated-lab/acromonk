@@ -16,8 +16,10 @@ This document provide the bill of materials that is used for the AcroMonk testbe
 |Screws, nuts, bolts|10|--|
 |Resistor, varistor and cables|10|--|
 |3D printing cost|--|--|
+|Total estimated cost|950-1000|
+||
 
 
 ## Notes
 * The underactuated lab does not have any relation with the providers and does not accept any responsibility for any possible issues with the third parties. 
-* The shipping cost is not included in the above mentioned costs.
+* The shipping and 3D printing expenses are excluded from the total cost.

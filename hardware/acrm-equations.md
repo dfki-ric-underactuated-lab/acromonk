@@ -5,7 +5,7 @@
 </div>
 
 <div align="center">
-<img width="500" src="../images/2d-arm-coordinate.png" />
+<img width="500" src="images/2d-arm-coordinate.png" />
 </div>
 
 ## Equation of Motion

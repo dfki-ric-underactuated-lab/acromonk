@@ -1,34 +1,10 @@
-# Trajectory optimization using direct collocation
+# Direct collocation
 
 ## Theory
 
 Direct collocation is an approach from ***collocation methods*** , which transforms the optimal control problem into a mathematical programming problem. The numerical solution can be achieved directly by solving the new problem using sequential quadratic programming [[1]](https://arc.aiaa.org/doi/pdf/10.2514/3.20223)[[2]](http://underactuated.mit.edu/trajopt.html).
 
-## Atomic behaviors
-Considering three fixed points for the robot as the following:
-- Z (single support, hanging)
-- B (double support with backward bar)
-- F (double support with forward bar)
 
-
-the following figure depicts the general possibilities for the robot's motion.
-
-<div align="center">
-<img width="800" src="../../../../../hardware/images/atomic-behaviors.png" />
-</div>
-
-<div align="center">
-<img width="200" src="../../../../../hardware/images/zb.gif" >
-<img width="200" src="../../../../../hardware/images/zf.gif" >
-<img width="200" src="../../../../../hardware/images/fb.gif" >
-<img width="200" src="../../../../../hardware/images/bf.gif" >
-</div>
-
-## AcroMonk's Configuration for Atomic Behaviors
-The unique gripper design offers a large region of attraction, shown in orange color, for grasping a target bar and a well defined pivot point for the swing maneuvers. The passive gripper impose a constraint on grasping configuration, which plays a vital role in robot's final configuration. 
-<div align="center">
-<img width="500" src="../../../../../hardware/images/2d-arm-acrm-coordinate_v2.png" />
-</div>
 
 
 ## Formulation
@@ -61,7 +37,8 @@ The continuous time trajectory optimization problem of the AcroMonk is shown in 
 
 - $`l(u) = u^TR u`$: Running cost with $`R`$ as input weight
 
-- $`\mathbf{f}(\mathbf{x}, u)`$: [Nonlinear dynamics of the AcroMonk](../../../../../hardware/acrm-equations.md) considered as equality constraint
+- $`\mathbf{f}(\mathbf{x}, u)`$: [Nonlinear dynamics of the AcroMonk](../../../../../../hardware/acrm-equations.md) considered as equality constraint
+
 
 ## Dependencies
 
