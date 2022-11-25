@@ -1,15 +1,16 @@
-from cProfile import label
 import sys
-
 sys.path.append("direct_collocation/")
 from trajopt_utils import (
     create_acromonk_plant,
     trajopt,
     traj_opt_hyper,
     visualize_traj_opt,
-    save_trajectory,
-    plot_traj,
 )
+
+sys.path.append("../../../utilities/")
+from utils import save_trajectory, make_parent_directory
+from utils_plot import plot_traj
+
 
 maneuver = input(
     "Enter the name of atomic behavior (ZB, ZF, BF, FB): "
@@ -41,4 +42,7 @@ traj_data = save_trajectory(
     frequency=1000,
     hyper_params=hyper_params,
 )
-plot_traj(traj_data)
+parent_folder = "data/trajectories"
+folder_name = f"direct_collocation/{maneuver}"
+directory = make_parent_directory(parent_folder, folder_name, up_directory=5)
+plot_traj(traj_data, directory, show=True)
