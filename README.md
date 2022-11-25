@@ -1,20 +1,11 @@
 # AcroMonk: A Minimalist Underactuated Brachiating Robot
 <div align="center">
-<img width="605" src="images/poster_new.png" />
+<img width="605" src="hardware/images/poster_new.png" />
 </div>
 
 
 <div align="center">
-<img width="605" src="images/5x-tvlqr.gif" />
-</div>
-
-<div align="center">
-<img width="300" src="images/zb.gif" >
-<img width="300" src="images/bf.gif" >
-</div>
-<div align="center">
-<img width="300" src="images/zf.gif" >
-<img width="300" src="images/fb.gif" >
+<img width="605" src="hardware/images/5x-tvlqr.gif" />
 </div>
 
 ## Description
@@ -30,22 +21,22 @@ which can be studied using the kit. Additionally, it provides a list of
 components, discusses best practices for implementation, and presents results 
 from experiments with the simulator and the real system. This repository 
 describes the hardware (CAD, Bill Of Materials ([BOM](hardware/bills-of-materials.md)) etc.) required to build 
-the physical system and provides the software (URDF models, simulation and 
-controllers) to control it.
+the physical system and provides the software (URDF models, simulation and controllers) to control it.
 
 
 ## Documentation
 
-The [hardware setup](hardware/testbench-description.md) and [sensor reading](hardware/sensor-reading.md) are described in their respective readme files. The dynamics of the AcroMonk are explained [here](hardware/acrm-equations.md).
+The dynamics of the AcroMonk is explained [here](hardware/acrm-equations.md). Additionally, [mechatronics design](hardware/testbench-description.md), [behavior generation]() and [control]() for the continuous brachiation are described in their respective readme files.
 
-* [Hardware & Testbench Description](hardware/testbench-description.md)
-* [Sensor reading](hardware/sensor-reading.md)
+* [Mechatronics Design](hardware/testbench-description.md)
+* [Behavior Generation](software/python/simulation/behavior_generation/README.md)
+* [Behavior Control](software/python/simulation/behavior_control/README.md)
 * [Bill Of Materials (BOM)](hardware/bills-of-materials.md)
 
 ## Authors #
 
 * [Shivesh Kumar](https://robotik.dfki-bremen.de/en/about-us/staff/shku02.html) (Project Supervisor)
-* [Mahdi Javadi](https://robotik.dfki-bremen.de/en/about-us/staff/maja04/) (Hardware and Software Maintainer)
+* [Mahdi Javadi](https://robotik.dfki-bremen.de/en/about-us/staff/maja04/) (Hardware and Software Maintainer, Trajectory Optimization and Stabilization)
 * [Daniel Harnack](https://robotik.dfki-bremen.de/en/about-us/staff/daha03.html) (Reinforcement Learning)
 * [Shubham Vyas](https://robotik.dfki-bremen.de/en/about-us/staff/shvy01/) (Trajectory Optimization, Hardware Concept)
 * [Daniel Pizzutilo](https://robotik.dfki-bremen.de/de/ueber-uns/mitarbeiter/dapi01.html) (Mechanical Design)
@@ -68,15 +59,21 @@ When working with a real system be careful and mind the following safety measure
 
 * Brushless motors can be very powerful, moving with tremendous force and speed. Always limit the range of motion, power, force and speed using configurable parameters, current limited supplies, and mechanical design.
 
-* Stay away from the plane in which pendulum is swinging. It is recommended to have a safety net surrounding the pendulum in case the pendulum flies away.
+* The robot must be placed in a ladder bar cage and keep at least 1-meter distance from the acromonk in case of operation.  
 
 * Make sure you have access to emergency stop while doing experiments. Be extra careful while operating in pure torque control loop.
 
+* The robot is equipped with an onboard Lithium Polymer battery and needs proper care and attention. Make sure that you have all the necessary information for the LiPo batteries.
+
 ## Acknowledgements #
-This work has been performed in the VeryHuman project funded by the German Aerospace Center (DLR) with federal funds (Grant Number: FKZ 01IW20004) from the Federal Ministry of Education and Research (BMBF) and is additionally supported with project funds from the federal state of Bremen for setting up the Underactuated Robotics Lab (Grant Number: 201-001-10-3/2021-3-2).
-
-<img width="500" src="docs/reference/source/figures/Logo_Underactuated_Lab.gif" />
-
+This work has been performed in the M-RoCK project funded by the
+German Aerospace Center (DLR) with federal funds (Grant Number: FKZ 01IW21002)
+from the Federal Ministry of Education and Research (BMBF) and is additionally
+supported with project funds from the federal state of Bremen for setting up
+the Underactuated Robotics Lab (Grant Number: 201-342-04-2/2021-4-1). The fourth author acknowledges support from the Stardust Reloaded project which has received funding from the European Union’s Horizon 2020 research and innovation program under the Marie Skłodowska-Curie grant agreement No 813644.
+<div align="center">
+<img width="500" src="hardware/images/Logo_Underactuated_Lab.gif" />
+</div>
 
 ## License
 
@@ -84,18 +81,18 @@ This work has been released under the BSD 3-Clause License. Details and terms of
 
 ## Citation
 
-1. Wiebe et al., (2022). Torque-limited simple pendulum: A toolkit for getting familiar with control algorithms in underactuated robotics. Journal of Open Source Software, 7(74), 3884, https://doi.org/10.21105/joss.03884
+1. Javadi et al., (2022). AcroMonk: A Minimalist Underactuated Brachiating Robot
 ```
-@article{Wiebe2022,
-  doi = {10.21105/joss.03884},
-  url = {https://doi.org/10.21105/joss.03884},
-  year = {2022},
-  publisher = {The Open Journal},
-  volume = {7},
-  number = {74},
-  pages = {3884},
-  author = {Felix Wiebe and Jonathan Babel and Shivesh Kumar and Shubham Vyas and Daniel Harnack and Melya Boukheddimi and Mihaela Popescu and Frank Kirchner},
-  title = {Torque-limited simple pendulum: A toolkit for getting familiar with control algorithms in underactuated robotics},
-  journal = {Journal of Open Source Software}
+@article{,
+  doi = {},
+  url = {},
+  year = {},
+  publisher = {},
+  volume = {},
+  number = {},
+  pages = {},
+  author = {},
+  title = {},
+  journal = {}
 }
 ```

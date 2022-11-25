@@ -2,7 +2,7 @@
 
 ## Theory
 
-This controller is designed to follow a precomputed trajectory. Particulary, the controller can process trajectories that have been found with help of the [trajectory optimization](../../trajectory_optimization/direct_collocation/README.md). 
+This controller is designed to follow a precomputed trajectory. Particulary, the controller can process trajectories that have been found with help of the [behavior generation methods](../../../behavior_generation/README.md). 
 
 The Time-varying Linear Quadratic Regulator (TVLQR) is an extension to the regular [LQR controller](https://underactuated.csail.mit.edu/lqr.html).
 The TVLQR controller tries to stabilize the system along a nominal trajectory. For this, at every timestep the system dynamics are linearized around the state of the nominal trajectory $`\mathbf{x}_0(t), \mathbf{u}_0(t)`$ at the given timestep $`t`$ as:
