@@ -1,4 +1,8 @@
+<div align="center">
+
 # AcroMonk: A Minimalist Underactuated Brachiating Robot
+</div>
+
 <div align="center">
 <img width="605" src="hardware/images/poster_new.png" />
 </div>
