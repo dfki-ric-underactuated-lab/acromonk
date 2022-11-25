@@ -1,16 +1,12 @@
 import sys
-
-sys.path.append("../../utilities/")
+sys.path.append("../../../utilities/")
 from utils import (
     drake_visualizer,
     generate_path,
     forward_kinematics,
     forward_diff_kinematics,
     np,
-    save_data,
-    save_dict,
 )
-from utils_polynomials import extract_data_from_polynomial
 from pydrake.all import DirectCollocation, PiecewisePolynomial, Solve
 
 
@@ -214,7 +210,7 @@ def create_acromonk_plant():
     parser = Parser(plant)
     urdf_folder = "data/urdf-files/urdf"
     file_name = "acromonk.urdf"
-    up_directory = 4
+    up_directory = 5
     urdf_path = generate_path(urdf_folder, file_name, up_directory)
     parser.AddModelFromFile(urdf_path)
     plant.Finalize()
@@ -244,80 +240,3 @@ def visualize_traj_opt(plant, scene_graph, x_trajectory):
     drake_visualizer(
         scene_graph, builder, initial_state=intial_state ,duration=x_trajectory.end_time()
     )
-
-
-def save_trajectory(
-    maneuver, x_trajectory, u_trajectory, frequency, hyper_params
-):
-    x0_d = x_trajectory.derivative(derivative_order=1)
-    x0_dd = x_trajectory.derivative(derivative_order=2)
-    # Extract State
-    acromonk_state, time_traj = extract_data_from_polynomial(
-        x_trajectory, frequency
-    )
-    # Extract xd_trajectory
-    x0_d_vec, _ = extract_data_from_polynomial(x0_d, frequency)
-    # Extract xdd_trajectory
-    x0_dd_vec, _ = extract_data_from_polynomial(x0_dd, frequency)
-    # Extract desired input
-    elbow_torque_des, _ = extract_data_from_polynomial(u_trajectory, frequency)
-    trajectory_folder = "data/trajectories/direct_collocation"
-    up_directory = 4
-    file_name = f"{maneuver}.csv"
-    trajectory_path = generate_path(trajectory_folder, file_name, up_directory)
-    data = {
-        "time": time_traj,
-        "shoulder_pos": acromonk_state[0, :],
-        "shoulder_vel": acromonk_state[2, :],
-        "shoulder_acc": x0_d_vec[2, :],
-        "shoulder_jerk": x0_dd_vec[2, :],
-        "elbow_pos": acromonk_state[1, :],
-        "elbow_vel": acromonk_state[3, :],
-        "elbow_acc": x0_d_vec[3, :],
-        "elbow_jerk": x0_dd_vec[3, :],
-        "elbow_torque": elbow_torque_des[0, :],
-    }
-    save_data(data, trajectory_path)
-    file_name = f"{maneuver}.txt"
-    params_path = generate_path(trajectory_folder, file_name, up_directory)
-    save_dict(hyper_params, params_path)
-    return data
-
-
-def plot_traj(traj_data):
-    import matplotlib.pyplot as plt
-
-    plt.figure(figsize=(15, 10))
-    plt.plot(traj_data["time"], traj_data["shoulder_pos"], label="shoulder")
-    plt.plot(traj_data["time"], traj_data["elbow_pos"], label="elbow", c='red')
-    plt.title("Position")
-    plt.xlabel("Time(seconds)")
-    plt.ylabel("Position(rad)")
-    plt.legend()
-
-    plt.figure(figsize=(15, 10))
-    plt.plot(traj_data["time"], traj_data["shoulder_vel"], label="shoulder")
-    plt.plot(traj_data["time"], traj_data["elbow_vel"], label="elbow", c='red')
-    plt.title("Velocity")
-    plt.xlabel("Time(seconds)")
-    plt.ylabel("Velocity(rad/s)")
-    plt.legend()
-
-    plt.figure(figsize=(15, 10))
-    plt.plot(traj_data["time"], traj_data["elbow_torque"], label="elbow")
-    plt.title("Torque Plot")
-    plt.xlabel("Time(seconds)")
-    plt.ylabel("Torque(Nm)")
-    plt.legend()
-
-    ee_y, ee_z = forward_kinematics(
-        traj_data["shoulder_pos"], traj_data["elbow_pos"]
-    )
-    plt.figure(figsize=(15, 10))
-    plt.plot(ee_y, ee_z, label="ee trajectory")
-    plt.title("End-Effector Trajectory")
-    plt.xlabel("Y-component(m)")
-    plt.ylabel("Z-component(m)")
-    plt.legend()
-
-    plt.show()

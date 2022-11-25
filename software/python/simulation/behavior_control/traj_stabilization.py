@@ -5,9 +5,13 @@ from utils import (
     create_acromonk_plant,
     np,
     load_desired_trajectory,
+    save_trajectory,
+    make_parent_directory
 )
-from utils_plot import make_results_directory, plot_closed_loop_control_data
-from stabilizer_utils import load_controller, save_trajectory
+from utils_plot import plot_closed_loop_control_data
+from stabilizer_utils import load_controller
+from datetime import datetime
+
 
 plant, context, scene_graph, builder = create_acromonk_plant()
 maneuver = input(
@@ -61,16 +65,18 @@ simulator = drake_visualizer(
 input_log = input_logger.FindLog(simulator.get_context())
 state_log = state_logger.FindLog(simulator.get_context())
 traj_data = save_trajectory(
-    maneuver,
-    controller_type,
-    x0,
-    u0,
+    maneuver=maneuver,
+    x_trajectory=x0,
+    u_trajectory=u0,
     frequency=1000,
     hyper_params=hyper_params,
+    controller_type=controller_type,    
     controller=controller,
     meas_state=state_log,
     meas_torque=input_log,
 )
 # Plot the simulation results
-directory = make_results_directory(maneuver, controller_type)
+parent_folder = f"results/simulation/{maneuver}-{controller_type}"
+folder_name = datetime.now().strftime("%Y%m%d-%I%M%S-%p")
+directory = make_parent_directory(parent_folder, folder_name, up_directory=4)
 plot_closed_loop_control_data(directory, traj_data, show=True)
