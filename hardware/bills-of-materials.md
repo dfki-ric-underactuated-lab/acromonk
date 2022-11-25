@@ -1,4 +1,7 @@
+<div align="center">
+
 # Bill of Materials
+</div>
 This document provide the bill of materials that is used for the AcroMonk testbench. 
 
 |Material|Price in Germany (Euro)|Sample Provider|
