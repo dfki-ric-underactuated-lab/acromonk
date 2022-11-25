@@ -26,7 +26,7 @@ the physical system and provides the software (URDF models, simulation and contr
 
 ## Documentation
 
-The dynamics of the AcroMonk is explained [here](hardware/acrm-equations.md). Additionally, [mechatronics design](hardware/testbench-description.md), [behavior generation]() and [control]() for the continuous brachiation are described in their respective readme files.
+The dynamics of the AcroMonk is explained [here](hardware/acrm-equations.md). Additionally, [mechatronics design](hardware/testbench-description.md), [behavior generation](software/python/simulation/behavior_generation/README.md) and [control](software/python/simulation/behavior_control/README.md) for the continuous brachiation are described in their respective readme files.
 
 * [Mechatronics Design](hardware/testbench-description.md)
 * [Behavior Generation](software/python/simulation/behavior_generation/README.md)

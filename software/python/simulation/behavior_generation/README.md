@@ -3,6 +3,7 @@
 # Behavior Generation
 </div>
 Considering three fixed points for the robot as the following:
+
 - Z (single support, hanging)
 - B (double support with backward bar)
 - F (double support with forward bar).
