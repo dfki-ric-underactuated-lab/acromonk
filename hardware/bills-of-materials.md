@@ -20,7 +20,6 @@ This document provide the bill of materials that is used for the AcroMonk testbe
 |Resistor, varistor and cables|10|--|
 |3D printing cost|--|--|
 |Total estimated cost|950-1000|
-||
 
 
 ## Notes
