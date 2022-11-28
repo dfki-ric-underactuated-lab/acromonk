@@ -33,7 +33,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/Base.obj" />
+          filename="meshes/Base.obj" />
       </geometry>
       <material
         name="">
@@ -64,7 +64,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/stick_2.obj" />
+          filename="meshes/stick_2.obj" />
       </geometry>
       <material
         name="">
@@ -108,7 +108,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/hook_1.obj" />
+          filename="meshes/hook_1.obj" />
       </geometry>
       <material
         name="">
@@ -157,7 +157,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/link_2.obj" />
+          filename="meshes/link_2.obj" />
       </geometry>
       <material
         name="">
@@ -211,7 +211,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/hook_2.obj" />
+          filename="meshes/hook_2.obj" />
       </geometry>
       <material
         name="">
@@ -255,7 +255,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/IMU.obj" />
+          filename="meshes/IMU.obj" />
       </geometry>
       <material
         name="">
@@ -299,7 +299,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/stick_1.obj" />
+          filename="meshes/stick_1.obj" />
       </geometry>
       <material
         name="">

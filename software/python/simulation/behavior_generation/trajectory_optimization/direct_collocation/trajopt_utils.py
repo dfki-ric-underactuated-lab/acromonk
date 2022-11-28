@@ -281,7 +281,7 @@ def create_acromonk_plant():
     scene_graph = SceneGraph()
     plant.RegisterAsSourceForSceneGraph(scene_graph)
     parser = Parser(plant)
-    urdf_folder = "data/urdf-files/urdf"
+    urdf_folder = "data/simulation_models"
     file_name = "acromonk.urdf"
     up_directory = 5
     urdf_path = generate_path(urdf_folder, file_name, up_directory)
