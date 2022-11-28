@@ -174,7 +174,7 @@ def create_acromonk_plant():
     builder = DiagramBuilder()
     plant, scene_graph = AddMultibodyPlantSceneGraph(builder, time_step=0.0)
     parser = Parser(plant)
-    urdf_folder = "data/urdf-files/urdf"
+    urdf_folder = "data/simulation_models"
     file_name = "acromonk.urdf"
     up_directory = 4
     urdf_path = generate_path(urdf_folder, file_name, up_directory)
