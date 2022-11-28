@@ -76,7 +76,7 @@ traj_data = save_trajectory(
     meas_torque=input_log,
 )
 # Plot the simulation results
-parent_folder = f"results/simulation/{maneuver}-{controller_type}"
+parent_folder = f"results/simulation/{maneuver}_{controller_type}"
 folder_name = datetime.now().strftime("%Y%m%d-%I%M%S-%p")
 directory = make_parent_directory(parent_folder, folder_name, up_directory=4)
 plot_closed_loop_control_data(directory, traj_data, show=True)
