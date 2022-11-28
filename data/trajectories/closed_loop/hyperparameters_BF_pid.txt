@@ -1,0 +1,4 @@
+Kp=[100.]
+Ki=[1.]
+Kd=[2.]
+Trajectory duration(seconds)=1.9098772981503944

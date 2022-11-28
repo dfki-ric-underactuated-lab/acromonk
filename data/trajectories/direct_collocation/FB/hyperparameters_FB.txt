@@ -1,0 +1,12 @@
+n=20
+tau_limit=3.0
+initial_state=(0.506588, 2.215851, -0.634777, 4.677687)
+theta_limit=[2.0943951023931953, 2.8797932657906435]
+speed_limit=10
+ladder_distance=0.34
+final_state=(-0.5585053606381855, -1.9722220547535925, -0.5, -3)
+R=100
+time_panalization=0
+init_guess=[0.0, 2.0]
+max_timestep=0.8
+min_timestep=0.1
