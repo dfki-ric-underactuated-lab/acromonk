@@ -1,7 +1,7 @@
 
 
 # Trajectory Stabilization with AcroMonk
-The following instruction assums that the scripts will be executed on the Raspberry Pi. 
+The following instruction assums that the scripts will be executed on the Raspberry Pi. The required packages that needs to be installed on the Raspberry Pi is provided in the [requirement.txt](requirements.txt).
 
 A Makefile is provided in the following folder for the automatic execution of the robust forward brachiation using TVLQR and PD controller:
 `software/python/real_system/Makefile`
