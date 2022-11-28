@@ -34,5 +34,4 @@ The unique gripper design offers a large region of attraction, shown in orange c
 The atomic behaviors are generated using the following methods:
 - Trajectory Optimization
     - [Direct Collocation](trajectory_optimization/direct_collocation/README.md) (ZF, ZB, FB, BF)
-- Reinforcement Learning
-    - [Proximal Policy Optimization]() (BF) **Needs to be cheched by DANIEL for Name and reference link to documentation**
+- [Reinforcement Learning](reinforcement_learning/README.md) (BF)
