@@ -32,7 +32,7 @@ To simulate the trained rl controller, move to the /scripts
 folder and run <code>python replay_rl_model.py</code>. The result should be something like this:
 
 <div align="center">
-<img width="600" src="../images/bf_rl.gif" />
+<img width="600" src="../../../../../hardware/images/bf_rl.gif" />
 </div>
 
 ## Training
@@ -53,7 +53,7 @@ environment.
 The current (dense) reward setup looks like this:
 
 <div align="center">
-<img width="600" src="../images/reward_visualization_modified_smaller_YZ.png" />
+<img width="600" src="../../../../../hardware/images/reward_visualization_modified_smaller_YZ.png" />
 </div>
 
 The trained controller will be saved in 

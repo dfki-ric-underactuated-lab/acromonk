@@ -3,7 +3,7 @@
 import os
 import datetime
 import shutil
-from utils.paths_handling import project_root_dir
+from utils.paths_handling import project_root_dir, rl_root_dir
 
 
 def make_log_folder():
@@ -23,7 +23,7 @@ def make_log_folder():
         raise NameError('Folder for saving model already exists!')
 
     # copy the current parameter settings for reproducibility
-    file_src = os.path.join(project_root_dir, 'reinforcement_learning', 'training', 'parameters.json')
+    file_src = os.path.join(rl_root_dir, 'training', 'parameters.json')
     file_dest = os.path.join(save_folder, 'parameters.json')
     shutil.copy(file_src, file_dest)
 
