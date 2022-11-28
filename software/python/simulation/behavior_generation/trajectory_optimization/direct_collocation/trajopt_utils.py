@@ -8,22 +8,23 @@ from utils import (
     np,
 )
 from pydrake.all import DirectCollocation, PiecewisePolynomial, Solve
-
+from collections import namedtuple
 
 def trajopt(
     plant,
     context,
-    n,
-    tau_limit,
-    initial_state,
-    theta_limit,
-    speed_limit,
-    ladder_distance,
-    final_state,
-    R,
-    time_panalization,
-    init_guess,
+    hyper_parameters
 ):
+    n=hyper_parameters.n
+    tau_limit=hyper_parameters.tau_limit
+    initial_state=hyper_parameters.initial_state
+    theta_limit=hyper_parameters.theta_limit
+    speed_limit=hyper_parameters.speed_limit
+    ladder_distance=hyper_parameters.ladder_distance
+    final_state=hyper_parameters.final_state
+    R=hyper_parameters.R
+    time_panalization=hyper_parameters.W
+    init_guess=hyper_parameters.init_guess
     min_timestep = 0.1
     max_timestep = 0.8
     dircol = DirectCollocation(
@@ -199,6 +200,78 @@ def traj_opt_hyper(maneuver):
         ],
     }
     return hyper_dict[f"{maneuver}"]
+
+
+class DircolHypers():
+    def __init__(
+        self,
+        n,
+        tau_limit,
+        initial_state,
+        theta_limit,
+        speed_limit,
+        ladder_distance,
+        final_state,
+        R,
+        W,
+        init_guess
+    ):
+        self.n = n
+        self.tau_limit = tau_limit
+        self.initial_state = initial_state
+        self.theta_limit = theta_limit
+        self.speed_limit = speed_limit
+        self.ladder_distance = ladder_distance
+        self.final_state = final_state
+        self.R = R
+        self.W = W
+        self.init_guess = init_guess
+    def create_params_structure(self):
+        HYPER = namedtuple(
+            "hhyper_parameters",
+            [
+                "n",
+                "tau_limit",
+                "initial_state",
+                "theta_limit",
+                "speed_limit",
+                "ladder_distance",
+                "final_state",
+                "R",
+                "W",
+                "init_guess"
+            ]
+        )
+        hyper = HYPER(
+            n=self.n,
+            tau_limit=self.tau_limit,
+            initial_state=self.initial_state,
+            theta_limit=self.theta_limit,
+            speed_limit=self.speed_limit,
+            ladder_distance=self.ladder_distance,
+            final_state=self.final_state,
+            R=self.R,
+            W=self.W,
+            init_guess=self.init_guess
+        )
+        return hyper
+
+
+def load_default_hyperparameters(maneuver):
+    dircol_hyper = traj_opt_hyper(maneuver)
+    hyper_params = DircolHypers(
+        n=dircol_hyper[0],
+        tau_limit=dircol_hyper[1],
+        initial_state=dircol_hyper[2],
+        theta_limit=dircol_hyper[3],
+        speed_limit=dircol_hyper[4],
+        ladder_distance=dircol_hyper[5],
+        final_state=dircol_hyper[6],
+        R=dircol_hyper[7],
+        W=dircol_hyper[8],
+        init_guess=dircol_hyper[9],
+    )
+    return hyper_params.create_params_structure()
 
 
 def create_acromonk_plant():
