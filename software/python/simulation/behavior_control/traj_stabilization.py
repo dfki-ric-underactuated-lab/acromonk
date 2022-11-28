@@ -15,9 +15,9 @@ from datetime import datetime
 
 plant, context, scene_graph, builder = create_acromonk_plant()
 maneuver = input(
-    "Enter the name of atomic behavior (ZB, ZF, BF, FB): "
+    "Enter the name of atomic behavior (ZB, ZF, BF, FB, OTHER): "
 ).upper()
-assert maneuver in (["ZB", "ZF", "BF", "FB"])
+assert maneuver in (["ZB", "ZF", "BF", "FB", "OTHER"])
 controller_type = input("Enter controller type (pid, tvlqr): ").lower()
 assert controller_type in (["tvlqr", "pid"])
 x0, u0, _, _ = load_desired_trajectory(maneuver)
