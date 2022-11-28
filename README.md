@@ -41,7 +41,7 @@ The dynamics of the AcroMonk is explained [here](hardware/acrm-equations.md). Ad
 
 * [Shivesh Kumar](https://robotik.dfki-bremen.de/en/about-us/staff/shku02.html) (Project Supervisor)
 * [Mahdi Javadi](https://robotik.dfki-bremen.de/en/about-us/staff/maja04/) (Hardware and Software Maintainer, Trajectory Optimization and Stabilization)
-* [Daniel Harnack](https://robotik.dfki-bremen.de/en/about-us/staff/daha03.html) (Reinforcement Learning)
+* [Daniel Harnack](https://robotik.dfki-bremen.de/en/about-us/staff/daha03.html) (Reinforcement Learning, Software Maintainer)
 * [Shubham Vyas](https://robotik.dfki-bremen.de/en/about-us/staff/shvy01/) (Trajectory Optimization, Hardware Concept)
 * [Daniel Pizzutilo](https://robotik.dfki-bremen.de/de/ueber-uns/mitarbeiter/dapi01.html) (Mechanical Design)
 * Paula Stocco (Trajectory Optimization and Stabilization)
