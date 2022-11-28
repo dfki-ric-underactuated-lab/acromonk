@@ -79,7 +79,7 @@ def save_trajectory(
         file_name = f"/{maneuver}_traj.csv"
         save_path = trajectory_path + file_name
         save_data(data, save_path)
-        params_path = trajectory_path + f"/hyperparameters-{maneuver}.txt"
+        params_path = trajectory_path + f"/hyperparameters_{maneuver}.txt"
         save_dict(hyper_params, params_path)
     else:
         # Extract_meas_state
@@ -127,10 +127,10 @@ def save_trajectory(
         parent_folder = "data/trajectories"
         folder_name = "closed_loop"        
         trajectory_path = make_parent_directory(parent_folder, folder_name, up_directory=4)
-        file_name = f"/{maneuver}-{controller_type}.csv"
+        file_name = f"/{maneuver}_{controller_type}.csv"
         save_path = trajectory_path + file_name
         save_data(data, save_path)
-        params_path = trajectory_path + f"/hyperparameters-{maneuver}-{controller_type}.txt"
+        params_path = trajectory_path + f"/hyperparameters_{maneuver}_{controller_type}.txt"
         save_dict(hyper_params, params_path)            
     return data
 
