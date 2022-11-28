@@ -1,7 +1,7 @@
 # Simulation using pydrake
 
 ## Important Note
-**Drake 1.2.0** is the main requirement for running the simulations for behvaior generation using direct collocation and behavior control using Time-varying Linear Quadratic Regulator (TVLQR). The simulation files will be updated to the latest version of the pydarke package in the future. 
+[Drake 1.2.0](https://github.com/RobotLocomotion/drake/releases/tag/v1.2.0) is the main requirement for running the simulations for behvaior generation using direct collocation and behavior control using Time-varying Linear Quadratic Regulator (TVLQR). The installation guide is provided [here](https://drake.mit.edu/from_binary.html#stable-releases). The simulation files will be updated to the latest version of the pydarke package in the future. 
 
 ## Trajectory Optimization
 To generate atomic behaviors using direct collocation, it is needed to run the python script in the following path:
