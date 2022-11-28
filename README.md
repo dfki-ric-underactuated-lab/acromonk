@@ -85,11 +85,12 @@ This work has been released under the BSD 3-Clause License. Details and terms of
 
 ## Citation
 
-1. Javadi et al., (2022). AcroMonk: A Minimalist Underactuated Brachiating Robot
+1. Javadi M, Harnack D., Stocco P., Kumar S., Vyas S., Kirchner F., (2022). AcroMonk: A Minimalist Underactuated Brachiating Robot. In: IEEE Robotics and Automation Letters (RA-L). Submitted Nov 2022.
 ```
 @article{,
   year = {2022},
   author = {Mahdi Javadi, Daniel Harnack, Paula Stocco, Shivesh Kumar, Shubham Vyas, Frank Kirchner},
   title = {AcroMonk: A Minimalist Underactuated Brachiating Robot},
+  journal = {IEEE Robotics and Automation Letters (RA-L)}
 }
 ```
