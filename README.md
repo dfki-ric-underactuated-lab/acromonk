@@ -91,6 +91,7 @@ This work has been released under the BSD 3-Clause License. Details and terms of
   year = {2022},
   author = {Mahdi Javadi, Daniel Harnack, Paula Stocco, Shivesh Kumar, Shubham Vyas, Frank Kirchner},
   title = {AcroMonk: A Minimalist Underactuated Brachiating Robot},
-  journal = {IEEE Robotics and Automation Letters (RA-L)}
+  journal = {IEEE Robotics and Automation Letters (RA-L)},
+  note = {Submitted Nov 2022}
 }
 ```
