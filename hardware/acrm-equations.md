@@ -16,7 +16,7 @@ The general formulation for equation of motion is shown in the following:
 	\mathbf{M}(\mathbf{q}) \ddot{\mathbf{q}} +\mathbf{C}(\mathbf{q}, \dot{\mathbf{q}}) = \mathbf{\tau}_g (\mathbf{q}) + \mathbf{B} u
 \end{equation*} 
 ```
-The mass-inertia matrix $`\mathbf{M}`$ for AcroMonk is
+The mass-inertia matrix $\mathbf{M}$ for AcroMonk is
 ```math
 \begin{equation*} 
 	\mathbf{M}(\mathbf{q}) = 
@@ -26,7 +26,7 @@ The mass-inertia matrix $`\mathbf{M}`$ for AcroMonk is
       \end{bmatrix}
 \end{equation*}
 ```
-with the shorthand notation $`s_1 = \sin(q_1), c_1 = \cos(q_1)`$. 
+with the shorthand notation $s_1 = \sin(q_1), c_1 = \cos(q_1)$. 
 Accordingly, Coriolis matrix is:
 ```math
 \begin{equation*}
@@ -51,4 +51,4 @@ with the gravity vector as:
  \end{equation*}
 ```
 
-and the actuation matrix is $`\mathbf{B} = [0 \quad 1]^T`$, which captures the underactuation of the system.
+and the actuation matrix is $\mathbf{B} = [0 \quad 1]^T$, which captures the underactuation of the system.
