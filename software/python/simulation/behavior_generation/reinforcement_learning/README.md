@@ -1,41 +1,5 @@
 # Reinforcement Learning
-## Installation
-This installation instruction assumes Ubuntu 20.04. 
-We recommend using a dedicated python virtual environment, e.g. using 
-
-    python3 -m venv path/to/your/new/venv
-
-The training and simulation environment uses Mujoco 2.1, which has to be installed first. In order to easily 
-find the package, you can add 
-
-    export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/path/to/mujoco/folder/bin
-
-to your .bashrc. The path is ~/.mujoco/mujoco210/bin by default (see https://github.com/openai/mujoco-py 
-for more instructions). 
-
-The requirements can be installed from the file located in 
-reinforcement_learning/requirements.txt (e.g. 
-<code>pip install -r requirements.txt</code>)
-
-
-Hint: if you face an 
-
-    GLEW initialization error: Missing GL version
-
-adding 
-
-    export LD_PRELOAD=$LD_PRELOAD:/usr/lib/x86_64-linux-gnu/libGLEW.so
-
-to .bashrc can help.
-
-To simulate the trained rl controller, move to the /scripts 
-folder and run <code>python replay_rl_model.py</code>. The result should be something like this:
-
-<div align="center">
-<img width="600" src="../../../../../hardware/images/bf_rl.gif" />
-</div>
-
-## Training
+## Training a Controller
 Training a new controller is done via
 
     python scripts/train_rl_model.py
@@ -57,7 +21,7 @@ The current (dense) reward setup looks like this:
 </div>
 
 The trained controller will be saved in 
-../data/trained_controllers under a folder with 
+{your_project_root}/data/trained_controllers under a folder with 
 the current time, along with a copy of the used 
 parameters for reproducibility. You can visualize your trained 
 controller by changing the path in scripts/replay_rl_model.py in line 15. 
