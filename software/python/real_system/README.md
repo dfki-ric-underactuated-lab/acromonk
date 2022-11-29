@@ -84,3 +84,7 @@ To execute the FB maneuver, you need to execute the script in the following fold
     - Place the robot in the hanging zero configuration 
     - Type in the terminal: ```sudo -E python3 FB_brachiation.py``` and if it returns no error, type in `y` and press `Enter`
     - The script waits for 10 seconds to let the operator attach the IMU arm to the front bar
+
+
+## Forward Brachiation using Reinforcement Learning
+A [guide](BF_Reinforcement_Learning/README.md) is provided for execution of Reinforcement learning algorithm on the AcroMonk. 
