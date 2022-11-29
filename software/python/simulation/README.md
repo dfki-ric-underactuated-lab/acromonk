@@ -1,10 +1,10 @@
 # Simulation using Mujoco
-An installation guide is provided for simulation of [Reinforcement learning algorithm in mojuco](behavior_generation/reinforcement_learning/README.md).
+An installation guide is provided for the simulation of [Reinforcement learning algorithm in mojuco](behavior_generation/reinforcement_learning/README.md).
 
 # Simulation using pydrake
 
 ## Important Note
-[Drake 1.2.0](https://github.com/RobotLocomotion/drake/releases/tag/v1.2.0) is the main requirement for running the simulations for behvaior generation using direct collocation and behavior control using Time-varying Linear Quadratic Regulator (TVLQR). The installation guide is provided [here](https://drake.mit.edu/from_binary.html#stable-releases). The simulation files will be updated to the latest version of the pydarke package in the future. 
+[Drake 1.2.0](https://github.com/RobotLocomotion/drake/releases/tag/v1.2.0) is the main requirement for running the simulations for behavior generation using direct collocation and behavior control using Time-varying Linear Quadratic Regulator (TVLQR). The installation guide is provided [here](https://drake.mit.edu/from_binary.html#stable-releases). The simulation files will be updated to the latest version of the pydarke package in the future. 
 
 ## Trajectory Optimization
 To generate atomic behaviors using direct collocation, it is needed to run the python script in the following path:
@@ -20,7 +20,7 @@ It prompts you the following message to choose from:
 
 `Enter the name of atomic behavior (ZB, ZF, BF, FB, OTHER):`
 
-Typing any of the atomic behaviors, e.g. ZB, will load the default parameters for behavior generation and opens up the simulation with the urdf visualization in a web-browser tab. If you want to proceed with arbitrary parameters, type in "OTHER". However, it is necessary to insert the parameters in the script as the following:
+Typing any of the atomic behaviors, e.g. ZB, will load the default parameters for behavior generation and opens up the simulation with the urdf visualization in a web browser tab. If you want to proceed with arbitrary parameters, type in "OTHER". However, it is necessary to insert the parameters in the script as the following:
 ```
 n               : Number of knot points
 tau_limit       : Input torque limit
@@ -37,7 +37,7 @@ If a solution exists, then the plots, csv file and hyperparameters will be saved
 
 ## Trajectory Stabilization
 
-In order to stabilize the obtained trajectoy in closed-loop form with TVLQR or PID controller, it is needed to run the python script in the following path:
+In order to stabilize the obtained trajectory in closed-loop form with TVLQR or PID controller, it is needed to run the python script in the following path:
 `software/python/simulation/behavior_control/traj_stabilization.py`
 
 by:

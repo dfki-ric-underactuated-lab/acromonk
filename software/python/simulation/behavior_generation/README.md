@@ -24,7 +24,7 @@ brachiation over horizontal bars.
 </div>
 
 ## AcroMonk's Configuration for Atomic Behaviors
-The unique gripper design offers a large region of attraction, shown in orange color, for grasping a target bar and a well defined pivot point for the swing maneuvers. The passive gripper impose a constraint on grasping configuration, which plays a vital role in robot's final configuration. 
+The unique gripper design offers a large region of attraction, shown in orange color, for grasping a target bar and a well-defined pivot point for the swing maneuvers. The passive gripper imposes a constraint on grasping configuration, which plays a vital role in the robot's final configuration. 
 <div align="center">
 <img width="500" src="../../../../hardware/images/2d-arm-acrm-coordinate_v2.png" />
 </div>

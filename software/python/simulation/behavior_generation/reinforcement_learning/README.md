@@ -20,7 +20,7 @@ reinforcement_learning/requirements.txt (e.g.
 
 Hint: if you face an 
 
-    GLEW intialization error: Missing GL version
+    GLEW initialization error: Missing GL version
 
 adding 
 
@@ -45,7 +45,7 @@ the parameters.json file in /training. The reward function
 is modified by changing the weights in parameters.json under the 
 "reward_setup" keyword. Rewards with a weight of 0 do not 
 take effect. The reward "reward_name" expects a method 
-"_reward_reward_name" of evironment/acromonk, so if you want to 
+"_reward_reward_name" of environment/acromonk, so if you want to 
 define a new reward, you have to set the weight in the parameters
 file and implement the respective method in the acromonk 
 environment. 
@@ -69,7 +69,7 @@ steps, e.g.
 ---
 **Challenges:**
 - Can you train a controller that achieves BF brachiation in one swing?
-- Can you train a BF controller only using enegy based reward?
+- Can you train a BF controller only using energy-based reward?
 - Can you train a BF controller only using sparse rewards?
-- Can you train controllers for the other atomic behaviors FB/ZB/ZF ?
+- Can you train controllers for the other atomic behaviors FB/ZB/ZF?
 ---
