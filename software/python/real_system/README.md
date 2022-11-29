@@ -78,7 +78,9 @@ make NBRACH=2 INIT_CONF=2 FILE_RECOVERY=ZB_pd.csv
 
 ### FB
 To execute the FB maneuver, you need to execute the script in the following folder `software/python/real_system/FB_PD/tests/FB_brachiation.py`.
+
 **Notes and cautions**
+
 - This script works only with the `INIT_CONF=1`
 - The following steps need to be taken for the real system test:
     - Place the robot in the hanging zero configuration 
