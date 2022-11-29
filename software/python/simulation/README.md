@@ -2,9 +2,7 @@
 An installation guide is provided for the simulation of [Reinforcement learning algorithm in mojuco](behavior_generation/reinforcement_learning/README.md).
 
 # Simulation using pydrake
-
-## Important Note
-[Drake 1.2.0](https://github.com/RobotLocomotion/drake/releases/tag/v1.2.0) is the main requirement for running the simulations for behavior generation using direct collocation and behavior control using Time-varying Linear Quadratic Regulator (TVLQR). The installation guide is provided [here](https://drake.mit.edu/from_binary.html#stable-releases). The simulation files will be updated to the latest version of the pydarke package in the future. 
+To install pydrake, follow the instructions provided on the official website of [Drake](https://drake.mit.edu/pip.html#stable-releases).
 
 ## Trajectory Optimization
 To generate atomic behaviors using direct collocation, it is needed to run the python script in the following path:
