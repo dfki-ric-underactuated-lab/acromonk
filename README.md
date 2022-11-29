@@ -37,6 +37,8 @@ The dynamics of the AcroMonk is explained [here](hardware/acrm-equations.md). Ad
 * [Behavior Control](software/python/simulation/behavior_control/README.md)
 * [Bill Of Materials (BOM)](hardware/bills-of-materials.md)
 
+The CAD file is also provided in grabCAD.com. You can use the 3D viewer from their webiste to diplay the 3D model directly within your browser.
+ - [Display AcroMonk in 3D](https://grabcad.com/library/acromonk-1)
 ## Authors #
 
 * [Shivesh Kumar](https://robotik.dfki-bremen.de/en/about-us/staff/shku02.html) (Project Supervisor)
