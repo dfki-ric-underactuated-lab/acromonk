@@ -24,10 +24,10 @@ for example:
 make NBRACH=3  TEST=tvlqr
 ```
 executes 3 brachiation motions with TVLQR stabilization. After typing the execution command on the terminal, the initialization of the parameters and IMU will be started. If it returns no error in the terminal, you need to type in `y` if ready for the execution on the real system. 
-The plots and csv file are saved in the `results/real_system` folder. 
+The plots and the csv file are saved in the `results/real_system` folder. 
 
 ## Initial configuration
-The zero offset coordinate of the motor will be set when the motor is energized. It is of great importance that the energization takes place when the robot has a hanging arm and $`\theta_2=0`$. The following table provides the overview of the possible initialization of the robot for the execution of the script. The arm with the computing compartment, i.e. Raspberry Pi and IMU, is shown in `green`.
+The zero offset coordinate of the motor will be set when the motor is energized. It is of great importance that the energization takes place when the robot has a hanging arm and $`\theta_2=0`$. The following table provides an overview of the possible initialization of the robot for the execution of the script. The arm with the computing compartment, i.e. Raspberry Pi and IMU, is shown in `green`.
 <div align="center">
 
 |INIT_CONF=1|INIT_CONF=2|
@@ -42,12 +42,12 @@ Here is the main difference between configurations:
 - `INIT_CONF=2`: IMU arm is attached to the bar and the motor axis is pointing towards the page, i.e. positive rotation is clockwise.
 
 ## Robust Forward Brachiation with AcroMonk
-For the robust forward brachiation, if you start the script's execution with zero configuration and then press `y`, the state machine detects the hanging position of the arm and starts with the recovery mode `ZF` and further continues with the rest of the brachiation maneuvers. However, if you place the robot in the `both arms attached` configuration after the initialization phase from zero configuration, and then press `y`, the execution will be started from the `BF` maneuver and continues with the brachiation.
+For the robust forward brachiation, if you start the script's execution with zero configuration and then press `y`, the state machine detects the hanging position of the arm and starts with the recovery mode `ZF` and further continues with the rest of the brachiation maneuvers. However, if you place the robot in `both arms attached` configuration after the initialization phase from zero configuration, and then press `y`, the execution will be started from the `BF` maneuver and continues with the brachiation.
 
 ## Atomic Behavior with AcroMonk
 The following instructions allow the execution of the atomic behaviors `ZF, BF, ZB, FB` on the real system:
 ### BF
-Place the robot in the initial position that both arms are attached to the bars and type one of the following commands depending on the `INIT_CONF`:
+Place the robot in the initial position where both arms are attached to the bars and type one of the following commands depending on the `INIT_CONF`:
 ```
 make 
 ```
@@ -89,4 +89,4 @@ To execute the FB maneuver, you need to execute the script in the following fold
 
 
 ## Forward Brachiation using Reinforcement Learning
-A [guide](BF_Reinforcement_Learning/README.md) is provided for execution of Reinforcement learning algorithm on the AcroMonk. 
+A [guide](BF_Reinforcement_Learning/README.md) is provided for the execution of the Reinforcement learning algorithm on the AcroMonk. 
