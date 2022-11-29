@@ -1,10 +1,33 @@
-# Simulation using Mujoco
-An installation guide is provided for the simulation of [Reinforcement learning algorithm in mojuco](behavior_generation/reinforcement_learning/README.md).
+# Software Installation
+All software has been tested on Ubuntu 20.04 and 22.04. To be able to run all simulation based software, install Drake first into 
+a python virtual 
+environment, as described on the [Drake website](https://drake.mit.edu/pip.html#stable-releases). After activating the venv, install the remaining 
+dependecies via:
 
-# Simulation using pydrake
-To install pydrake, follow the instructions provided on the official website of [Drake](https://drake.mit.edu/pip.html#stable-releases).
+    pip install -r requirements.txt
 
-## Trajectory Optimization
+In addition, the training and simulation environment for reinforcement 
+learning uses Mujoco 2.1 (see https://github.com/openai/mujoco-py for installation instructions). In order to easily 
+find the package, you can add 
+
+    export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/path/to/mujoco/folder/bin
+
+to your .bashrc. The path is ~/.mujoco/mujoco210/bin by default. 
+
+### Potential Issues
+
+If you face a
+
+    GLEW initialization error: Missing GL version
+
+when trying to start the mujoco simulator, adding 
+
+    export LD_PRELOAD=$LD_PRELOAD:/usr/lib/x86_64-linux-gnu/libGLEW.so
+
+to .bashrc can help.
+
+
+# Trajectory Optimization
 To generate atomic behaviors using direct collocation, it is needed to run the python script in the following path:
 `software/python/simulation/behavior_generation/trajectory_optimization/simulate_trajopt.py`
 
@@ -33,7 +56,7 @@ init_guess      : Initial trajectory as initial guess for solver
 ```
 If a solution exists, then the plots, csv file and hyperparameters will be saved with the same file name that is typed in the `data/trajectories` folder. 
 
-## Trajectory Stabilization
+# Trajectory Stabilization
 
 In order to stabilize the obtained trajectory in closed-loop form with TVLQR or PID controller, it is needed to run the python script in the following path:
 `software/python/simulation/behavior_control/traj_stabilization.py`
@@ -48,3 +71,16 @@ One can provide arbitrary gains for TVLQR and PID controller in the script and a
 
 and the plots are saved in the `results/simulation` folder. 
 
+# Reinforcement Learning
+
+With RL, a closed loop controller can be trained directly in simulation, 
+which does not follow a pre-computed trajectory.
+
+To simulate the trained rl controller, move to the behavior_generation/reinforcement_leraning/scripts 
+folder and run <code>python replay_rl_model.py</code>. The result should look like this:
+
+<div align="center">
+<img width="600" src="../../../hardware/images/bf_rl.gif" />
+</div>
+
+More information on training new controllers can be found [here](behavior_generation/reinforcement_learning/README.md).
