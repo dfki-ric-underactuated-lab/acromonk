@@ -184,19 +184,39 @@ def create_acromonk_plant():
     return plant, context, scene_graph, builder
 
 
-def drake_visualizer(scene_graph, builder, initial_state, duration, visualize=None):
-    from pydrake.all import Simulator, ConnectMeshcatVisualizer
-    from meshcat.servers.zmqserver import start_zmq_server_as_subprocess
+# def drake_visualizer(scene_graph, builder, initial_state, duration, visualize=None):
+#     from pydrake.all import Simulator, ConnectMeshcatVisualizer
+#     from meshcat.servers.zmqserver import start_zmq_server_as_subprocess
 
-    _, zmq_url, _ = start_zmq_server_as_subprocess(server_args=[])
-    meshcat = ConnectMeshcatVisualizer(
-        builder,
-        scene_graph,
-        zmq_url=zmq_url,
-        delete_prefix_on_load=True,
-        open_browser=True,
-    )
-    meshcat.load()
+#     _, zmq_url, _ = start_zmq_server_as_subprocess(server_args=[])
+#     meshcat = ConnectMeshcatVisualizer(
+#         builder,
+#         scene_graph,
+#         zmq_url=zmq_url,
+#         delete_prefix_on_load=True,
+#         open_browser=True,
+#     )
+#     meshcat.load()
+#     diagram = builder.Build()
+#     simulator = Simulator(diagram)
+#     simulator.set_target_realtime_rate(1)
+#     context_simulator = simulator.get_mutable_context()
+#     if visualize == 'pid':
+#         initial_state = np.append(initial_state,[[0]],axis=0)
+#     if visualize != None:
+#         context_simulator.SetContinuousState(initial_state)
+#     simulator.Initialize()
+#     meshcat.start_recording()
+#     simulator.AdvanceTo(duration)
+#     meshcat.stop_recording()
+#     meshcat.publish_recording()
+#     return simulator
+
+def drake_visualizer(scene_graph, builder, initial_state, duration, visualize=None):
+    from pydrake.all import Simulator, StartMeshcat, MeshcatVisualizer
+    print('\n<<<<<Visualization started>>>>>\n')
+    meshcat = StartMeshcat()
+    visualizer = MeshcatVisualizer.AddToBuilder(builder, scene_graph, meshcat)
     diagram = builder.Build()
     simulator = Simulator(diagram)
     simulator.set_target_realtime_rate(1)
@@ -205,11 +225,9 @@ def drake_visualizer(scene_graph, builder, initial_state, duration, visualize=No
         initial_state = np.append(initial_state,[[0]],axis=0)
     if visualize != None:
         context_simulator.SetContinuousState(initial_state)
-    simulator.Initialize()
-    meshcat.start_recording()
+    visualizer.StartRecording()
     simulator.AdvanceTo(duration)
-    meshcat.stop_recording()
-    meshcat.publish_recording()
+    visualizer.PublishRecording()
     return simulator
 
 
