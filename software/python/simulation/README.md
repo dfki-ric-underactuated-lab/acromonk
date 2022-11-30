@@ -41,7 +41,8 @@ It prompts you the following message to choose from:
 
 `Enter the name of atomic behavior (ZB, ZF, BF, FB, OTHER):`
 
-Typing any of the atomic behaviors, e.g. ZB, will load the default parameters for behavior generation and opens up the simulation with the urdf visualization in a web browser tab. If you want to proceed with arbitrary parameters, type in "OTHER". However, it is necessary to insert the parameters in the script as the following:
+Typing any of the atomic behaviors, e.g. ZB, will load the default parameters for behavior generation and provide a web link in the terminal. 
+The simulation with the urdf visualization can be viewed by opening the link in a web browser. If you want to proceed with arbitrary parameters, type in "OTHER". However, it is necessary to insert the parameters in the script as the following:
 ```
 n               : Number of knot points
 tau_limit       : Input torque limit

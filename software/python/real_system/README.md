@@ -27,7 +27,7 @@ executes 3 brachiation motions with TVLQR stabilization. After typing the execut
 The plots and the csv file are saved in the `results/real_system` folder. 
 
 ## Initial configuration
-The zero offset coordinate of the motor will be set when the motor is energized. It is of great importance that the energization takes place when the robot has a hanging arm and $`\theta_2=0`$. The following table provides an overview of the possible initialization of the robot for the execution of the script. The arm with the computing compartment, i.e. Raspberry Pi and IMU, is shown in `green`.
+The zero offset coordinate of the motor will be set when the motor is energized. It is of great importance that the energization takes place when the robot has a hanging arm and $\theta_2=0$. The following table provides an overview of the possible initialization of the robot for the execution of the script. The arm with the computing compartment, i.e. Raspberry Pi and IMU, is shown in `green`.
 <div align="center">
 
 |INIT_CONF=1|INIT_CONF=2|
