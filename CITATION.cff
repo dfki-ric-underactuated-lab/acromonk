@@ -1,0 +1,7 @@
+authors:Javadi M., Harnack D., Stocco P., Kumar S., Vyas S., Pizzutilo D., Kirchner F.
+author_email = Mahdi.Javadi@dfki.de
+title: AcroMonk: An Underactuated Brachiation Robot with Passive Grippers
+long_description = file: README.md
+url = https://github.com/dfki-ric-underactuated-lab/acromonk
+version: v0.1.0
+date-released: 2022-11-29
