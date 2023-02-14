@@ -1,13 +1,8 @@
+[![DOI](https://zenodo.org/badge/566754133.svg)](https://zenodo.org/badge/latestdoi/566754133)
 <div align="center">
 
 # AcroMonk: A Minimalist Underactuated Brachiating Robot
 </div>
-
-
-
-[![DOI](https://zenodo.org/badge/566754133.svg)](https://zenodo.org/badge/latestdoi/566754133)
-
-
 
 <div align="center">
 <img width="605" src="hardware/images/poster_new.png" />
