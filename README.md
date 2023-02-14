@@ -1,3 +1,4 @@
+[![DOI](https://zenodo.org/badge/566754133.svg)](https://zenodo.org/badge/latestdoi/566754133)
 <div align="center">
 
 # AcroMonk: A Minimalist Underactuated Brachiating Robot
@@ -13,18 +14,18 @@
 </div>
 
 ## Description
-This project offers an open-source and low-cost kit to test control algorithms 
-for underactuated robots. 
-it implements a **brachiation robot** platform called **AcroMonk** which 
-can brachiate robustly over a horizontally laid ladder bar. AcroMonk is 
-the simplest possible underactuated brachiator built using one quasi-direct 
-drive actuator (QDD) and passive grippers. This is the first brachiator with 
-unactuated grippers that can perform more than two brachiation maneuvers. 
-This project offers different control methods for trajectory stabilization 
-which can be studied using the kit. Additionally, it provides a list of 
-components, discusses best practices for implementation, and presents results 
-from experiments with the simulator and the real system. This repository 
-describes the hardware (CAD, Bill Of Materials ([BOM](hardware/bills-of-materials.md)) etc.) required to build 
+This project offers an open-source and low-cost kit to test control algorithms
+for underactuated robots.
+it implements a **brachiation robot** platform called **AcroMonk** which
+can brachiate robustly over a horizontally laid ladder bar. AcroMonk is
+the simplest possible underactuated brachiator built using one quasi-direct
+drive actuator (QDD) and passive grippers. This is the first brachiator with
+unactuated grippers that can perform more than two brachiation maneuvers.
+This project offers different control methods for trajectory stabilization
+which can be studied using the kit. Additionally, it provides a list of
+components, discusses best practices for implementation, and presents results
+from experiments with the simulator and the real system. This repository
+describes the hardware (CAD, Bill Of Materials ([BOM](hardware/bills-of-materials.md)) etc.) required to build
 the physical system and provides the software (URDF models, simulation and controllers) to control it.
 
 
@@ -66,7 +67,7 @@ When working with a real system be careful and mind the following safety measure
 
 * Brushless motors can be very powerful, moving with tremendous force and speed. Always limit the range of motion, power, force and speed using configurable parameters, currently limited supplies, and mechanical design.
 
-* The robot must be placed in a ladder bar cage and kept at least one-meter distance from the acromonk in case of operation.  
+* The robot must be placed in a ladder bar cage and kept at least one-meter distance from the acromonk in case of operation.
 
 * Make sure you have access to an emergency stop while doing experiments. Be extra careful while operating in the pure torque control loop.
 
@@ -84,7 +85,7 @@ the Underactuated Robotics Lab (Grant Number: 201-342-04-2/2021-4-1). The fourth
 
 ## License
 
-This work has been released under the BSD 3-Clause License. Details and terms of use are specified in the LICENSE file within this repository. Note that we do not publish third-party software, hence software packages from other developers are released under their very own terms and conditions, e.g. Stable baselines (MIT License) and Tensorflow (Apache License v2.0). If you install third-party software packages along with this repo ensure that you follow each individual license agreement.   
+This work has been released under the BSD 3-Clause License. Details and terms of use are specified in the LICENSE file within this repository. Note that we do not publish third-party software, hence software packages from other developers are released under their very own terms and conditions, e.g. Stable baselines (MIT License) and Tensorflow (Apache License v2.0). If you install third-party software packages along with this repo ensure that you follow each individual license agreement.
 
 ## Citation
 
