@@ -19,8 +19,8 @@ brachiation over horizontal bars.
 <div align="center">
 <img width="200" src="../../../../hardware/images/zb.gif" >
 <img width="200" src="../../../../hardware/images/zf.gif" >
-<img width="200" src="../../../../hardware/images/fb.gif" >
 <img width="200" src="../../../../hardware/images/bf.gif" >
+<img width="200" src="../../../../hardware/images/fb.gif" >
 </div>
 
 ## AcroMonk's Configuration for Atomic Behaviors
