@@ -9,8 +9,8 @@ Considering three fixed points for the robot as the following:
 - F (double support with forward bar).
 
 ## Atomic Behaviors
-Inspired by the typical brachiation of a monkey, the following four atomic behaviors can give rise to robust bidirectional
-brachiation over horizontal bars.
+Inspired by the typical brachiation of a monkey, the following four atomic behaviors can give rise to robust bidirectional brachiation over horizontal bars. Because of the passive gripper choice, additional behaviors have to be considered to release the swing arm from a bar, which is denoted as Back Release (BR) and Front Release (FR) to initiate a BF or FB atomic behavior, respectively. More info on the gripper's heuristics can be found [here](../../../../hardware/gripper-heuristics.md).
+
 
 <div align="center">
 <img width="800" src="../../../../hardware/images/atomic-behaviors.png" />
@@ -28,6 +28,7 @@ The unique gripper design offers a large region of attraction, shown in orange c
 <div align="center">
 <img width="500" src="../../../../hardware/images/2d-arm-acrm-coordinate_v2.png" />
 </div>
+
 
 ## Behavior Generation Methods
 
