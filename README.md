@@ -30,7 +30,7 @@ the physical system and provides the software (URDF models, simulation and contr
 
 ## Paper and Video References
 
-The work is published in IEEE Robotics and Automation Letters 2023. The hardware experiment video of AcroMonk is also selected as an awesome robot video in [IEEE Spectrum Video Friday](https://spectrum.ieee.org/video-friday-acromonk).
+The work is published in IEEE Robotics and Automation Letters 2023. The hardware experiment video of AcroMonk is also featured as an awesome robot video in [IEEE Spectrum Video Friday](https://spectrum.ieee.org/video-friday-acromonk).
 
 Further links:
 * Paper is available on [IEEE](https://ieeexplore.ieee.org/document/10106397) and [arXiv](https://arxiv.org/abs/2305.08373).
