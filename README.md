@@ -28,7 +28,13 @@ from experiments with the simulator and the real system. This repository
 describes the hardware (CAD, Bill Of Materials ([BOM](hardware/bills-of-materials.md)) etc.) required to build
 the physical system and provides the software (URDF models, simulation and controllers) to control it.
 
+## Paper and Video References
 
+The work is published in IEEE Robotics and Automation Letters 2023. The hardware experiment video of AcroMonk is also selected as an awesome robot video in [IEEE Spectrum Video Friday](https://spectrum.ieee.org/video-friday-acromonk).
+
+Further links:
+* Paper is available on [IEEE](https://ieeexplore.ieee.org/document/10106397) and [arXiv](https://arxiv.org/abs/2305.08373).
+* Video is available on [youtube](https://youtu.be/FIcDNtJo9Jc).
 ## Documentation
 
 The dynamics of the AcroMonk is explained [here](hardware/acrm-equations.md). Additionally, [mechatronics design](hardware/testbench-description.md), [behavior generation](software/python/simulation/behavior_generation/README.md) and [control](software/python/simulation/behavior_control/README.md) for the continuous brachiation are described in their respective readme files.
