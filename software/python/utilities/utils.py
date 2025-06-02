@@ -40,7 +40,7 @@ def save_dict(dict, path):
 
 def save_data(data, path_to_save):
     header = ",".join(data.keys())
-    data = np.vstack(data.values()).T
+    data = np.vstack(list(data.values())).T
     np.savetxt(path_to_save, data, delimiter=",", header=header, comments="")
     print(f"saved trajectory csv to {path_to_save}")
 
@@ -178,7 +178,7 @@ def create_acromonk_plant():
     file_name = "acromonk.urdf"
     up_directory = 4
     urdf_path = generate_path(urdf_folder, file_name, up_directory)
-    parser.AddModelFromFile(urdf_path)
+    parser.AddModels(urdf_path)
     plant.Finalize()
     context = plant.CreateDefaultContext()
     return plant, context, scene_graph, builder

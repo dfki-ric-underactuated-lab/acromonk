@@ -5,7 +5,7 @@ from pydrake.all import (
 from pydrake.all import VectorSystem, PiecewisePolynomial
 class TvlqrControllerSystem(VectorSystem):
     def __init__(self, plant, tvlqr):
-        VectorSystem.__init__(self, 4, 1)
+        VectorSystem.__init__(self, 4, 1, True)
         self.tvlqr_obj = tvlqr
     def DoCalcVectorOutput(self, context_simulation, acromonk_state, unused, output):
         trajTime = context_simulation.get_time()

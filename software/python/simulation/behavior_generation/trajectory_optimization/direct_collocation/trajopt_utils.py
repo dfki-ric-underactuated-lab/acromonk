@@ -31,8 +31,8 @@ def trajopt(
         plant,
         context,
         num_time_samples=n,
-        minimum_timestep=min_timestep,
-        maximum_timestep=max_timestep,
+        minimum_time_step=min_timestep,
+        maximum_time_step=max_timestep,
         input_port_index=plant.get_actuation_input_port().get_index(),
     )
     dircol.AddEqualTimeIntervalsConstraints()
@@ -285,7 +285,7 @@ def create_acromonk_plant():
     file_name = "acromonk.urdf"
     up_directory = 5
     urdf_path = generate_path(urdf_folder, file_name, up_directory)
-    parser.AddModelFromFile(urdf_path)
+    parser.AddModels(urdf_path)
     plant.Finalize()
     context = plant.CreateDefaultContext()
     return plant, context, scene_graph
